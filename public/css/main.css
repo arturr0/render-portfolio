@@ -703,10 +703,10 @@ body {
   position: relative;
  
 }
-/* .descriptionEng, .descriptionPol {
+.descriptionEng, .descriptionPol {
   position: absolute;
   user-select: text;
-} */
+}
 .description {
   position: relative;
   width: 100%;
