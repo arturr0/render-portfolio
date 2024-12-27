@@ -56,7 +56,7 @@ body {
   }
   .main .projectImg {
     width: auto;
-    height: 80px;
+    height: 140px;
   }
   .main .tables {
     width: 60%;
@@ -65,7 +65,7 @@ body {
 }
 @media (max-device-width: 1200px) and (orientation: portrait) {
   .main .projectImg {
-        height: 100px; /* Set a maximum height of 100 viewport height units */
+        height: 60px; /* Set a maximum height of 100 viewport height units */
         width: auto;
     }
   .main #displayed-image {
