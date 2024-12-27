@@ -1,0 +1,127 @@
+doctype html
+html(lang='en')
+  head
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+    script(type='text/javascript').
+      let views = 0;
+      let stored = false;
+      let prevURL;
+      const lastPageUrl = document.referrer; 
+      prevURL = lastPageUrl.toString();
+      currentURL = window.location.href;
+      currURL = currentURL.toString();
+      console.log(prevURL);
+      function updateCounter(type) {
+        return fetch('https://kindhearted-hollow-cactus.glitch.me/api?' + type)
+        .then((res) => res.json());
+      }
+      // Update counter on page load or refresh
+      if (performance.navigation.type === 1) {
+        updateCounter("type=visit-pageview")
+        .then((data) => {
+          views = data.pageviews;
+          const pageviewsCount = document.getElementById('visitEng');
+          const pageviewsCount1 = document.getElementById('visitPol');
+          if (pageviewsCount || pageviewsCount1) {
+            pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+            pageviewsCount1.textContent = "Wizyty: " + views;
+          }
+          sessionStorage.setItem("visit", "x");
+          // Store 'views' in localStorage
+          localStorage.setItem('views', views);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      } else {
+        // If not a page load or refresh, check if it's a specific page
+        if (prevURL != 'https://kindhearted-hollow-cactus.glitch.me/applications' &&
+            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/mechanics' &&
+            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/games' &&
+            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/') {
+          updateCounter("type=pageview")
+          .then((data) => {
+            views = data.pageviews;
+            const pageviewsCount = document.getElementById('visitEng');
+            const pageviewsCount1 = document.getElementById('visitPol');
+            if (pageviewsCount || pageviewsCount1) {
+              pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+              pageviewsCount1.textContent = "Wizyty: " + views;
+            }
+            // Store 'views' in localStorage
+            localStorage.setItem('views', views);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+        } else {
+          stored = true;
+        }
+      }
+    //console.log(window.location.href);
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='public/css/main.css')
+    link(rel="stylesheet" href='public/css/fontello.css')
+    title  My Projects
+  body
+    img.code(src='https://cdn.glitch.global/a02f0561-d6c8-468b-9bad-b43135e7d9d0/1%20code.jpg?v=1714757670057')
+    .content
+      .menu
+        div.submenu
+        div.aboutLeft(style="border-bottom-right-radius: 10px;")
+        a#aboutMe(href='/').bg
+          div#engAbout.toggle-element.visible About Me
+          div#polAbout.pol.toggle-element O mnie
+        div(style="width:20px;border-bottom-left-radius: 10px;background-color: rgb(128,128,128);")
+        .dropdown
+          div#projects
+            a#projectsEng.services.toggle-element.visible Projects
+            a#projectsPol.services.toggle-element Projekty
+          .dropdown-content.hidden(style='display: none;')
+            a#apps.service(href="/applications" onclick='hidemenu()')
+              i.icon-laptop
+            a#mech.service(href='/mechanics' onclick='hidemenu()')
+            a#games.service(href='/games' onclick='hidemenu()')
+        div.filler(style="background-color: rgb(128,128,128);")
+        div#visits
+          a#visitEng.visits.toggle-element.visible
+          a#visitPol.visits.toggle-element
+        div#lang(onclick="toggleElements()")
+          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/POL.jpg?v=1699542939034')#eng.toggle-element.visible
+          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/UK.jpg?v=1699539920089')#pol.toggle-element 
+        div.rightCorner
+    .main
+      .mainContent
+        #homeContent
+          #textEng.toggle-element.visible(style="margin-left: 40px; margin-right:40px; margin-top: 15px; text-align: justify;")  
+            p.
+              Hello, my name is Artur and I welcome to my website, which is a portfolio of my programming projects. The site includes presentations of the most interesting applications that I have had the pleasure of creating. Each of them consists of an image that can be enlarged by clicking on, and a brief description. Below are panels containing information about the technologies used, a link to the source code on the GitHub platform, a link to the website (if the application is web-based), and in the case of two games written in C++, a hyperlink to download the program.
+            p.
+              I am an amateur programmer. My dream is to get paid employment in the IT industry, although I am aware that starting a career after forty is extremely challenging. I am self-taught in coding, which can be a tough challenge. Fortunately, tutorials, forums, and ChatGPT make the process easier. Coding forums are an interesting phenomenon, reflecting the community of programmers. When I couldn't find a solution to a problem someone else was facing, I asked a question myself. I received a response within 24 hours, and each time it was useful and, moreover, written in a polite tone. I've discovered that programmers make a helpful community. Assisting in solving someone else's problem, in my opinion, can be an opportunity to develop skills for the person responding to questions. As I mentioned, my path as a self-taught programmer was not always easy. Sometimes it involved hours of analyzing code, dozens of Google or ChatGPT queries. However, I can proudly say that I never gave up, and I solved every problem independently or with assistance. Programming has definitely taught me, in addition to analytical thinking, perseverance, and consistency in reaching goals.
+            p.
+              As an electromechanic, I decided to develop skills in the field of designing automation systems. The first languages I encountered were C++ and LabView. LabView is an incredibly interesting tool. The graphical environment of this language allows the creation of applications for measuring physical quantities, analyzing data, and controlling electronic devices. However, the possibilities of LabView are much greater. For example, I managed to write a game of "Poker" in this language. Creating large projects in the form of block diagrams may, however, result in low transparency of this specific code. Therefore, I decided to focus on the classical solution–code in the form of plain text. That's why I chose writing my own projects in C++. The undeniable advantage of this language is its performance; however, to fully utilize its capabilities, mastering memory management skills is essential. I considered it not a good choice for learning a language at the beginning of learning, so I decided to switch to Python. The decision turned out to be appropriate in terms of ease of learning, but the computational efficiency for more complex operations and the limited use of this language in job offers for programmers prompted me to change technologies again. I decided to learn JavaScript, which I considered a compromise between C++ and Python. I believe the decision was correct, especially considering the vast possibilities that the internet provides today. This language has a large number of ready-made libraries and frameworks, which also determines its positive relationship: accessibility - range of applications. I tie my future to JavaScript, but the path to becoming a fully developed programmer is still far away. I must master asynchronous handling first, and only then begin learning a framework, which will make me a true web developer.
+            p.
+              However, I am full of hope and determination because I love coding. I have always been attracted to fields that require creativity and logical thinking skills. When you visit my website, you will surely notice that the majority of projects are games. Electronic entertainment is something that particularly attracts me as a former gamer. Game design, especially for those operating in real-time, poses a significant challenge due to the multitude of processes happening within them. Physics engines and artificial intelligence in games are areas that greatly interest me. 
+            p.
+              I invite you once again to visit my website.
+          #textPol.toggle-element(style="margin-left: 40px; margin-right:40px; margin-top: 15px; text-align: justify;") 
+            p.  
+              Mam na imię Artur, witam serdecznie na mojej stronie, która stanowi portfolio programisty. Strona zawiera prezentacje najciekawszych aplikacji, które miałem przyjemność tworzyć. Każda z nich jest opatrzona obrazem, który można powiększyć, klikając na niego oraz krótkim opisem. Poniżej znajdują się panele zawierające informacje o wykorzystanych technologiach, link do kodu źródłowego na platformie GitHub, link do strony (jeśli aplikacja jest internetowa), oraz w przypadku dwóch gier napisanych w C++ - hiperłącze do pobrania programu.
+            p.
+              Jestem programistą-amatorem. Moim marzeniem jest podjęcie pracy zarobkowej w branży IT, choć zdaję sobie sprawę, że rozpoczęcie kariery po czterdziestce jest niezwykle trudne. Uczę się kodowania samodzielnie, co potrafi być czasem ciężkim wyzwaniem. Sprawę na szczęście ułatwiają tutoriale, fora oraz ChatGPT. Fora koderskie to całkiem ciekawe zjawisko, będące odzwierciedleniem społeczności programistów. Kiedy nie udawało mi się znaleźć rozwiązania problemu, z którym borykał się ktoś inny, sam zadawałem pytanie. Odpowiedź otrzymywałem maksymalnie po 24 godzinach i za każdym razem była ona użyteczna, a co więcej zredagowana w kulturalnym tonie. Przekonałem się, że programiści stanowią uczynną społeczność. Pomoc w rozwiązywaniu cudzego problemu, jak mi się wydaje, może stanowić możliwość rozwinięcia umiejętności również odpowiadającego na zadane pytanie. Jak już wspomniałem, moja ścieżka programisty-samouka nie zawsze była usłana różami. Czasem obarczona była godzinami analizy kodu, dziesiątkami zapytań do Google czy ChatGPT. Mogę jednak pochwalić się tym, że nigdy nie poddałem się i każdy problem samodzielnie lub z pomocą rozwiązałem. Programowanie zdecydowanie nauczyło mnie, oprócz analitycznego myślenia, uporu i konsekwencji w docieraniu do celu.
+            p.
+              Jako elektromechanik postanowiłem rozwinąć umiejętności w dziedzinie projektowania systemów automatyki. Pierwszymi językami, z którymi miałem styczność były C++ oraz LabView. LabView to niezwykle ciekawe narzędzie. Środowisko graficzne tego języka umożliwia tworzenie aplikacji do pomiarów wielkości fizycznych, analizy danych i kontroli urządzeń elektronicznych. Możliwości LabView są jednak dużo większe. Udało mi się na przykład napisać grę „Poker” w tym języku. Tworzenie dużych projektów w postaci schematów blokowych może być jednak obarczone małą przejrzystością tego specyficznego kodu. Postanowiłem więc skupić uwagę nad klasycznym rozwiązaniem – kodem w postaci czystego tekstu, dlatego też postanowiłem pisać własne projekty w C++. Niewątpliwą zaletą tego języka jest wydajność, jednak, aby w pełni wykorzystać jego możliwości należy opanować umiejętności zarządzania pamięcią. Uznałem, że nie jest to dobry wybór jeśli chodzi o naukę języka na start, więc postanowiłem uczyć się Pythona. Decyzja okazała się trafna jeśli chodzi o łatwość nauki, ale wydajność obliczeniowa dla bardziej skomplikowanych działań i ograniczone zastosowanie tego języka w ofertach pracy dla programistów skłoniły mnie do ponownej zmiany technologii. Postanowiłem uczyć się JavaScriptu, który uznałem jako kompromis pomiędzy C++, a Pythonem. Uważam, że decyzja była słuszna, zwłaszcza jeśli chodzi o ogrom możliwości, jakie daje dziś sieć internetowa. Język ten posiada dużą ilość gotowych bibliotek i frameworków, co również decyduje o jego pozytywnej relacji przystępność - spektrum zastosowań. Wiążę z JavaScriptem swoją przyszłość, jednak droga do w pełni rozwiniętego programisty jest jeszcze daleka. Muszę opanować obsługę asynchroniczności, a dopiero wtedy podjąć naukę frameworka, co będzie czyniło ze mnie web developera z krwi i kości.
+            p. 
+              Jestem jednak pełen nadziei i determinacji, gdyż uwielbiam kodować. Zawsze pociągały mnie dziedziny, w których należy wykazać się kreatywnością i umiejętnością logicznego myślenia. Odwiedzając moją stronę, zauważysz z pewnością, że największą ilość projektów stanowią gry. Elektroniczna rozrywka to coś, co mnie szczególnie pociąga, jako byłego zapalonego gracza. Projektowanie gier, zwłaszcza tych działających w czasie rzeczywistym, to spore wyzwanie, ze względu na dużą liczbę procesów, które się w nich dzieją. Silniki fizyki i sztuczna inteligencja w grach to dziedziny, które bardzo mnie interesują.
+            p.
+              Zapraszam jeszcze raz do odwiedzenia mojej strony.
+    script(type='text/javascript').
+      if (stored) {
+        let storedViews = localStorage.getItem('views');
+        document.getElementById('visitEng').textContent = "Visits: " + storedViews;
+        document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
+      }
+    script(src='public/dropdown.js')
+    
