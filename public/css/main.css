@@ -65,7 +65,7 @@ body {
 }
 @media (max-device-width: 1200px) and (orientation: portrait) {
   .main .projectImg {
-        height: 60px; /* Set a maximum height of 100 viewport height units */
+        height: 100px; /* Set a maximum height of 100 viewport height units */
         width: auto;
     }
   .main #displayed-image {
@@ -352,9 +352,9 @@ body {
     margin-right: 5px;
   }
   
-  .main .description {
+  /* .main .description {
     width: 100%;
-  }
+  } */
 }
 
 @media only screen and (min-device-width: 900px) {
@@ -438,7 +438,7 @@ body {
   height: 54px;
 }
 #projectsEng, #projectsPol {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -675,10 +675,10 @@ body {
   margin-right: 10px;
   height: auto;
 }
-.imageDescription {
+/* .imageDescription {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .imageTables {
   display: flex;
@@ -687,7 +687,7 @@ body {
 .image {
   
   
-  height: 100%;
+  float: left;
 }
 .projectImg {
 
