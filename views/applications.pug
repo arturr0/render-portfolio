@@ -24,7 +24,7 @@ html(lang='en')
       currURL = currentURL.toString();
       console.log(prevURL);
       function updateCounter(type) {
-        return fetch('https://kindhearted-hollow-cactus.glitch.me/api?' + type)
+        return fetch('https://artur-bednarski.onrender.com/api?' + type)
         .then((res) => res.json());
       }
       // Update counter on page load or refresh
@@ -47,10 +47,10 @@ html(lang='en')
         });
       } else {
         // If not a page load or refresh, check if it's a specific page
-        if (prevURL != 'https://kindhearted-hollow-cactus.glitch.me/applications' &&
-            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/mechanics' &&
-            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/games' &&
-            prevURL != 'https://kindhearted-hollow-cactus.glitch.me/') {
+        if (prevURL != 'https://artur-bednarski.onrender.com/applications' &&
+            prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
+            prevURL != 'https://artur-bednarski.onrender.com/games' &&
+            prevURL != 'https://artur-bednarski.onrender.com/') {
           updateCounter("type=pageview")
           .then((data) => {
             views = data.pageviews;
