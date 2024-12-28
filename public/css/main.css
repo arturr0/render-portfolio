@@ -21,6 +21,9 @@ body {
   
   
 }
+.imageDescription {
+  display: flex;
+}
 .tools {
             display: flex;
         }
@@ -103,7 +106,7 @@ body {
 }
 @media (max-device-width: 1200px) and (orientation: portrait) {
   .main .projectImg {
-        height: 100px; /* Set a maximum height of 100 viewport height units */
+        height: 60px; /* Set a maximum height of 100 viewport height units */
         width: auto;
     }
   .main #displayed-image {
@@ -742,13 +745,11 @@ body {
  
 }
 .descriptionEng, .descriptionPol {
-  position: absolute;
+  grid-area: 1/1;
   user-select: text;
 }
 .description {
-  position: relative;
-  width: 100%;
-  margin-left: 10px;
+  display: grid;
 } 
 .borderContent {
   margin-right: 4px;
