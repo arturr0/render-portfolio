@@ -22,12 +22,14 @@ body {
   
 }
 @font-face {
-  font-family: 'fontello';
-  src: url('fontello.woff2') format('woff2'),
-       url('fontello.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'fontello';
+    src: url('../fonts/fontello.woff2') format('woff2'),
+         url('../fonts/fontello.woff') format('woff'),
+         url('../fonts/fontello.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
+
 @media (max-device-width: 1200px) and (orientation: landscape) {
    
   .main #displayed-image {
