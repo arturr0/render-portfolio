@@ -50,10 +50,10 @@ body {
     width: 90px;
     
   }
-/*   .main .description {
+  .main .description {
     overflow: auto;
     height: auto;
-  } */
+  }
   .main .projectImg {
     width: auto;
     height: 140px;
@@ -65,7 +65,7 @@ body {
 }
 @media (max-device-width: 1200px) and (orientation: portrait) {
   .main .projectImg {
-        height: 60px; /* Set a maximum height of 100 viewport height units */
+        height: 100px; /* Set a maximum height of 100 viewport height units */
         width: auto;
     }
   .main #displayed-image {
@@ -165,10 +165,10 @@ body {
     margin: 0;
   }
 }
-  .main .description {
+  /* .main .description {
     overflow: auto;
     height: auto;
-  }
+  } */
   
   .main .tables {
     font-size: 13px;
