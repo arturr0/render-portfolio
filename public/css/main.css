@@ -738,6 +738,7 @@ body {
   display: block; /* Prevents extra space below inline-block images */
   border: 2px solid white;
   border-radius: 10px;
+  position: sticky;
 }
 
 .git, .link, .tech {
