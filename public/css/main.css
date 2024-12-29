@@ -125,8 +125,8 @@ body {
     width: auto;
   }
   .main .tools {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    margin: 5px;
   }
   ::-webkit-scrollbar {
   width: 0px;
