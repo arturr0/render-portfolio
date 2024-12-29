@@ -124,7 +124,7 @@ body {
     height: 200px;
     width: auto;
   }
-  .main .svgText {
+  .main .tools {
     display: flex;
     flex-direction: column;
   }
