@@ -21,6 +21,15 @@ const contentSets = [
         let isErasing = false; // Flag for typing or erasing
         let typingTimeout; // Timeout to control the typing/erasing process
 
+        // Function to stop and reset animation
+        function resetAnimation() {
+            clearTimeout(typingTimeout); // Clear any ongoing typing or erasing timeout
+            textElement.textContent = ""; // Clear current text
+            index = 0; // Reset character index
+            currentParagraph = 0; // Start from the first paragraph
+            isErasing = false; // Reset erasing flag
+        }
+
         function type() {
             const currentText = paragraphs[currentParagraph];
 
@@ -32,7 +41,7 @@ const contentSets = [
                 } else {
                     setTimeout(() => {
                         isErasing = true;
-                        type(); // Start erasing after delay
+                        typingTimeout = setTimeout(type, 20); // Start erasing after delay
                     }, 1000); // Delay before erasing
                 }
             } else {
@@ -49,13 +58,9 @@ const contentSets = [
         }
 
         function changeContent() {
-            clearTimeout(typingTimeout); // Stop any ongoing typing or erasing
+            resetAnimation(); // Reset animation before changing content
             currentSetIndex = (currentSetIndex + 1) % contentSets.length; // Cycle to the next content set
             paragraphs = contentSets[currentSetIndex]; // Update paragraphs
-            currentParagraph = 0; // Start with the first paragraph
-            index = 0; // Reset character index
-            isErasing = false; // Reset erasing flag
-            textElement.textContent = ""; // Clear current text
             type(); // Start typing animation from the beginning
         }
 
