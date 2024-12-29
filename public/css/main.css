@@ -41,11 +41,11 @@ html {
         }
         .first {
           margin-left: auto;
-          margin-right: auto;
+          
         }
         .last {
           margin-right: auto;
-          margin-left: auto;
+          
         }
         .text {
             margin-top: auto;
@@ -135,6 +135,14 @@ html {
   .main #displayed-image {
     height: 200px;
     width: auto;
+  }
+  .main .first {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .last {
+    margin-right: auto;
+    margin-left: auto;
   }
   .main .mainContent #homeContent {
     width: 120%;
