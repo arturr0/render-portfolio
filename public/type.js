@@ -1,13 +1,13 @@
 const contentSets = [
 [
     "Hello, I'm Artur",
-    "I'm an electromechanic and a programmer",
+    "I'm a mechanic and a programmer",
     "Feel free to explore my portfolio"
 ],
 [
     "Witam, mam na imię Artur",
     "Jestem elektromechanikiem i programistą",
-    "Zapraszam do zapoznania się z moim portfolio"
+    "Zapraszam do mojego portfolio"
 ]
 ];
 
