@@ -1,7 +1,7 @@
 const contentSets = [
             [
                 "Hello, I'm Artur",
-                "I'm an electromechanic and a software developer",
+                "I'm an electromechanic and a programmer",
                 "Feel free to explore my portfolio"
             ],
             [
@@ -13,62 +13,56 @@ const contentSets = [
 
         const textElement = document.getElementById("text");
         const changeContentButton = document.getElementById("change-content-button");
+
         let paragraphs = contentSets[0]; // Default content
         let currentSetIndex = 0; // Tracks the current set of paragraphs
         let currentParagraph = 0; // Index of the current paragraph
         let index = 0; // Index of the current character
         let isErasing = false; // Flag for typing or erasing
-        let typingInterval; // To control the animation interval
+        let typingTimeout; // Timeout to control the typing/erasing process
 
         function type() {
             const currentText = paragraphs[currentParagraph];
 
             if (!isErasing) {
-                // Typing characters
                 if (index < currentText.length) {
                     textElement.textContent += currentText.charAt(index);
                     index++;
+                    typingTimeout = setTimeout(type, 50); // Continue typing at controlled speed
                 } else {
-                    // Finished typing, start erasing after a delay
-                    clearInterval(typingInterval);
                     setTimeout(() => {
                         isErasing = true;
-                        typingInterval = setInterval(type, 100); // Erasing speed
+                        type(); // Start erasing after delay
                     }, 1000); // Delay before erasing
                 }
             } else {
-                // Erasing characters
                 if (index > 0) {
                     textElement.textContent = currentText.substring(0, index - 1);
                     index--;
+                    typingTimeout = setTimeout(type, 20); // Continue erasing at controlled speed
                 } else {
-                    // Finished erasing
-                    clearInterval(typingInterval);
                     isErasing = false;
-                    currentParagraph = (currentParagraph + 1) % paragraphs.length; // Move to the next paragraph
-                    setTimeout(() => {
-                        typingInterval = setInterval(type, 150); // Typing speed
-                    }, 500); // Delay before typing the next paragraph
+                    currentParagraph = (currentParagraph + 1) % paragraphs.length; // Move to next paragraph
+                    setTimeout(type, 500); // Delay before typing the next paragraph
                 }
             }
         }
 
         function changeContent() {
-            clearInterval(typingInterval); // Stop any ongoing animation
+            clearTimeout(typingTimeout); // Stop any ongoing typing or erasing
             currentSetIndex = (currentSetIndex + 1) % contentSets.length; // Cycle to the next content set
-            paragraphs = contentSets[currentSetIndex]; // Update the paragraphs array
-            currentParagraph = 0; // Reset to the first paragraph in the new set
+            paragraphs = contentSets[currentSetIndex]; // Update paragraphs
+            currentParagraph = 0; // Start with the first paragraph
             index = 0; // Reset character index
             isErasing = false; // Reset erasing flag
             textElement.textContent = ""; // Clear current text
-            typingInterval = setInterval(type, 150); // Restart animation
+            type(); // Start typing animation from the beginning
         }
 
-        // Attach the event listener for the button
         //changeContentButton.addEventListener("click", changeContent);
 
         // Start the typing animation when the page loads
         window.onload = () => {
-            typingInterval = setInterval(type, 150);
+            type(); // Start typing animation
         };
         document.getElementById('lang').addEventListener('click', changeContent);
