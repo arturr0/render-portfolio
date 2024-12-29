@@ -6,7 +6,7 @@ const contentSets = [
 ],
 [
     "Witam, mam na imię Artur",
-    "Jestem elektromechanikiem i programistą",
+    "Jestem mechanikiem i programistą",
     "Zapraszam do mojego portfolio"
 ]
 ];
