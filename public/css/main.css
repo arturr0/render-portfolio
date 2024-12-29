@@ -39,6 +39,12 @@ html {
             border-radius: 40px;
             margin-right: 10px;
         }
+        .first {
+          margin-left: auto;
+        }
+        .last {
+          margin-right: auto;
+        }
         .text {
             margin-top: auto;
             margin-bottom: auto;
