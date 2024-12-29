@@ -30,7 +30,7 @@ html {
 }
 .tools {
             display: flex;
-            justify-content: center;
+/*             justify-content: center; */
         }
         .svgText {
             display: flex;
