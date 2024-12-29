@@ -41,9 +41,11 @@ html {
         }
         .first {
           margin-left: auto;
+          margin-right: auto;
         }
         .last {
           margin-right: auto;
+          margin-left: auto;
         }
         .text {
             margin-top: auto;
