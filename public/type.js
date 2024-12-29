@@ -37,7 +37,7 @@ const contentSets = [
                 if (index < currentText.length) {
                     textElement.textContent += currentText.charAt(index);
                     index++;
-                    typingTimeout = setTimeout(type, 50); // Continue typing at controlled speed
+                    typingTimeout = setTimeout(type, 50); // Controlled speed for typing
                 } else {
                     setTimeout(() => {
                         isErasing = true;
@@ -48,7 +48,7 @@ const contentSets = [
                 if (index > 0) {
                     textElement.textContent = currentText.substring(0, index - 1);
                     index--;
-                    typingTimeout = setTimeout(type, 20); // Continue erasing at controlled speed
+                    typingTimeout = setTimeout(type, 20); // Controlled speed for erasing
                 } else {
                     isErasing = false;
                     currentParagraph = (currentParagraph + 1) % paragraphs.length; // Move to next paragraph
