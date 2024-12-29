@@ -2,17 +2,12 @@ const contentSets = [
             [
                 "Hello, I'm Artur",
                 "I'm an electromechanic and a software developer",
-                "Welcome to my portfolio"
+                "Feel free to explore my portfolio"
             ],
             [
-                "This is the updated content!",
-                "Here you can see my new projects.",
-                "Thanks for visiting my portfolio."
-            ],
-            [
-                "Another content set!",
-                "Feel free to explore.",
-                "Stay tuned for updates!"
+                "Witam, mam na imię Artur",
+                "Jestem elektromechanikiem i programistą",
+                "Zapraszam do zapoznania się z moim portfolio"
             ]
         ];
 
@@ -70,9 +65,10 @@ const contentSets = [
         }
 
         // Attach the event listener for the button
-        changeContentButton.addEventListener("click", changeContent);
+        //changeContentButton.addEventListener("click", changeContent);
 
         // Start the typing animation when the page loads
         window.onload = () => {
             typingInterval = setInterval(type, 150);
         };
+        document.getElementById('lang').addEventListener('click', changeContent);
