@@ -95,6 +95,9 @@ html(lang='en')
     .main
       .mainContent
         #homeContent
+          .typing-container
+            span#text
+            span.cursor _
           p.title Programming Languages
           .tools
             .svgText
@@ -157,4 +160,5 @@ html(lang='en')
         document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
       }
     script(src='public/dropdown.js')
+    script(src='public/type.js')
     
