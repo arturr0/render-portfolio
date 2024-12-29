@@ -124,6 +124,10 @@ body {
     height: 200px;
     width: auto;
   }
+  .main .svgText {
+    display: flex;
+    flex-direction: column;
+  }
   ::-webkit-scrollbar {
   width: 0px;
   
