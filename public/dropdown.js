@@ -125,6 +125,19 @@ if (isTouchDevice() && isCurrentURL('https://artur-bednarski.onrender.com') && i
     } else {
         console.log('Either not a touch device or not on the specific URL.');
     }
+    function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+// Function to check if the current URL matches a certain URL
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
+// Function to check if the current URL matches a certain URL
+function isCurrentURL(targetURL) {
+    return window.location.href === targetURL;
+}
   function hidemenu() {
     $(".dropdown-content").css("display", "none");
   }
