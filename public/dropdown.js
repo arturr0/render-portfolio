@@ -41,7 +41,7 @@ $('#aboutMe').hover(
   
     // Event listener for clicking the "Services" link
   
-    services.addEventListener("touchstart", function (event) {
+    document.addEventListener("touchstart", function (event) {
         console.log("Touch event detected.");
         event.stopPropagation(); // Prevents propagation of the touch event.
     
