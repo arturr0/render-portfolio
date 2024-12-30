@@ -713,7 +713,7 @@ html {
   height: 100%; /* Adjust this value based on your needs */
   overflow: hidden;  
   box-sizing: border-box;
-  padding: 20px;  
+  padding: 0 10px 10px 10px;  
 }
 
 #homeContent {
