@@ -42,38 +42,40 @@ $('#aboutMe').hover(
     // Event listener for clicking the "Services" link
   
     services.addEventListener("touchstart", function (event) {
-      console.log("t");
-      event.stopPropagation(); // Prevent this click event from propagating to the document
-      //services.style.backgroundColor = "#555";
-      if (isDropdownVisible) {
-        // Hide the dropdown
-        dropdownContent.classList.add("hidden");
-        if (window.location.href === "https://artur-bednarski.onrender.com") { 
-         services.style.backgroundColor = "rgb(128, 128, 128)";
-         console.log(window.location.href);
-         console.log(isDropdownVisible);
+        console.log("Touch event detected.");
+        event.stopPropagation(); // Prevents propagation of the touch event.
+    
+        if (isDropdownVisible) {
+            // Check if the URL matches.
+            if (window.location.href === "https://artur-bednarski.onrender.com/") {
+                services.style.backgroundColor = "rgb(128, 128, 128)"; // Set to grey.
+            } else {
+                services.style.backgroundColor = "white"; // Set to white for other URLs.
+            }
+    
+            // Hide the dropdown.
+            dropdownContent.classList.add("hidden");
+            $(".dropdown-content").css({
+                "max-height": "0px",
+                "transition": "max-height 0.7s ease"
+            });
+    
+            isDropdownVisible = false; // Update the dropdown visibility status.
+            console.log("Dropdown is now hidden.", isDropdownVisible);
+        } else {
+            // Show the dropdown.
+            services.style.backgroundColor = "#555"; // Set background color.
+            dropdownContent.classList.remove("hidden");
+            $(".dropdown-content").css({
+                "max-height": "300px",
+                "transition": "max-height 0.7s ease"
+            });
+    
+            isDropdownVisible = true; // Update the dropdown visibility status.
+            console.log("Dropdown is now visible.", isDropdownVisible);
         }
-        else {
-            services.style.backgroundColor = "white";
-            console.log(window.location.href);
-            console.log(isDropdownVisible);
-        }
-        $(".dropdown-content").css("max-height", "0px");
-        //$('.services').css('background-color', 'white');
-        //$(".dropdown-content").css("display", "none");
-        isDropdownVisible = false;
-        console.log(isDropdownVisible);
-      } else {
-        
-        services.style.backgroundColor = "#555";
-        
-        dropdownContent.classList.remove("hidden");
-         $(".dropdown-content").css("max-height", "300px");
-  $(".dropdown-content").css("transition", "max-height 0.7s ease");
-        isDropdownVisible = true;
-        console.log(isDropdownVisible);
-      }
     });
+    
      const serviceElements = document.querySelectorAll(".service");
   
     // Add event listeners to all "service" elements
