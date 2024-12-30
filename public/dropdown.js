@@ -9,7 +9,7 @@ $('#aboutMe').hover(
   );
   
   $(document).ready(function () {
-    
+    let isDropdownVisible = false;
     console.log("drop");
     document.getElementById("apps").innerHTML =  "<i class='icon-laptop'></i> Applications";
     document.getElementById("mech").innerHTML = "<i class='icon-wrench'></i> Mechanics";
@@ -37,7 +37,7 @@ $('#aboutMe').hover(
       // }
     });
   
-    let isDropdownVisible = false;
+    
   
     // Event listener for clicking the "Services" link
   
