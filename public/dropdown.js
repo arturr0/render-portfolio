@@ -143,7 +143,7 @@ document.addEventListener('touchstart', (event) => {
         services.style.backgroundColor = "rgb(128, 128, 128)"
         // Add your logic here for touch devices on this specific URL
     } else {
-        console.log('Either not a touch device or not on the specific URL.');
+        console.log(window.location.href, isDropdownVisible);
     }
 });
   function hidemenu() {
