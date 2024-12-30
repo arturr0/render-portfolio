@@ -72,6 +72,13 @@ body {
     height: 200px;
     width: auto;
   }
+  .main .svgText {
+  display: flex;
+  border: solid 3px black;
+  height: 80px;
+  border-radius: 40px;
+  
+}
   ::-webkit-scrollbar {
   width: 0px;
   
