@@ -545,7 +545,7 @@ html {
 .toggle-element {
   opacity: 0;
   display: hidden;
-  
+  grid-area: 1/1;
   transition: opacity 0.5s ease, visibility 0.5s ease; /* Adjust the duration and easing function as needed */
 }
 .visible {
