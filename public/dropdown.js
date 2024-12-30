@@ -49,7 +49,7 @@ $('#aboutMe').hover(
         // Hide the dropdown
         dropdownContent.classList.add("hidden");
         if (window.location.href === "https://artur-bednarski.onrender.com/") services.style.backgroundColor = "rgb(128, 128, 128)";
-        else services.style.backgroundColor = "white";
+        else services.style.backgroundColor = "black";
         $(".dropdown-content").css("max-height", "0px");
         //$('.services').css('background-color', 'white');
         //$(".dropdown-content").css("display", "none");
