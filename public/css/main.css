@@ -139,8 +139,10 @@ html {
   .main .svgText {
     display: flex;
     border: solid 3px black;
-    height: 80px;
+/*     height: 80px; */
     border-radius: 40px;
+    margin-left: 0;
+    margin-right: 0;
 
   }
   .main .first {
