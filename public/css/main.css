@@ -136,6 +136,13 @@ html {
     height: 200px;
     width: auto;
   }
+  .svgText {
+    display: flex;
+    border: solid 3px black;
+    height: 80px;
+    border-radius: 40px;
+
+  }
   .main .first {
     margin-left: auto;
     margin-right: auto;
