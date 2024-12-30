@@ -28,9 +28,9 @@ $(document).ready(function () {
     if (isDropdownVisible) {
       dropdownContent.classList.add("hidden");
       $(".dropdown-content").css("max-height", "0px");
-      services.style.backgroundColor = window.location.href.includes("onrender")
-        ? "rgb(128, 128, 128)"
-        : "white";
+      if (window.location.href === "https://artur-bednarski.onrender.com/") {
+        services.style.backgroundColor = "rgb(128, 128, 128)"; // Replace "desiredColor" with the color you want
+    }
     } else {
       dropdownContent.classList.remove("hidden");
       $(".dropdown-content").css("max-height", "300px").css("transition", "max-height 0.7s ease");
