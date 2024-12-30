@@ -62,18 +62,19 @@ $('#aboutMe').hover(
     
             isDropdownVisible = false; // Update the dropdown visibility status.
             console.log("Dropdown is now hidden.", isDropdownVisible);
-        } else {
-            // Show the dropdown.
-            services.style.backgroundColor = "#555"; // Set background color.
-            dropdownContent.classList.remove("hidden");
-            $(".dropdown-content").css({
-                "max-height": "300px",
-                "transition": "max-height 0.7s ease"
-            });
+        } 
+        // else {
+        //     // Show the dropdown.
+        //     services.style.backgroundColor = "#555"; // Set background color.
+        //     dropdownContent.classList.remove("hidden");
+        //     $(".dropdown-content").css({
+        //         "max-height": "300px",
+        //         "transition": "max-height 0.7s ease"
+        //     });
     
-            isDropdownVisible = true; // Update the dropdown visibility status.
-            console.log("Dropdown is now visible.", isDropdownVisible);
-        }
+        //     isDropdownVisible = true; // Update the dropdown visibility status.
+        //     console.log("Dropdown is now visible.", isDropdownVisible);
+        // }
     });
     
      const serviceElements = document.querySelectorAll(".service");
