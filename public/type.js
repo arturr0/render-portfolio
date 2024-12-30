@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const textElement = document.getElementById("text");
-    const changeContentButton = document.getElementById("change-content-button");
+    //const changeContentButton = document.getElementById("change-content-button");
 
     let paragraphs = contentSets[0]; // Default content set
     let currentSetIndex = 0; // Tracks the current set of paragraphs
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isErasing = false; // Flag for typing or erasing
     let typingTimeout; // Timeout to control the typing/erasing process
     let isAnimating = false; // Flag to prevent overlapping animations
+    let isTypingComplete = false; // Track if typing is complete
 
     // Reset the animation state
     function resetAnimation() {
@@ -31,71 +32,102 @@ document.addEventListener("DOMContentLoaded", () => {
         currentParagraph = 0; // Start from the first paragraph
         isErasing = false; // Reset erasing state
         isAnimating = false; // Reset animation flag
+        isTypingComplete = false; // Reset typing completion flag
     }
 
-    // Typing function with erasing behavior
-    function type() {
-        if (currentParagraph >= paragraphs.length) {
-            currentParagraph = 0; // Reset to first paragraph after the last one
-        }
-
+    // Function for typing a single paragraph
+    function typeParagraph() {
         const currentText = paragraphs[currentParagraph];
 
-        if (!isErasing) {
-            if (index < currentText.length) {
-                textElement.textContent += currentText.charAt(index); // Add next character
-                index++;
-            } else {
-                // After typing the whole paragraph, start erasing after a short delay
-                isErasing = true;
-            }
+        if (index < currentText.length) {
+            textElement.textContent += currentText.charAt(index); // Add next character
+            index++;
         } else {
-            if (index > 0) {
-                textElement.textContent = currentText.substring(0, index - 1); // Erase one character
-                index--;
-            } else {
-                // Once the paragraph is erased, move to the next one
-                currentParagraph++;
-                isErasing = false;
+            // After typing the whole paragraph, mark typing as complete
+            isTypingComplete = true;
+
+            // After a delay, start erasing
+            setTimeout(() => {
+                if (isTypingComplete) {
+                    isErasing = true; // Start erasing once typing is complete
+                }
+            }, 1000); // Delay before erasing starts
+        }
+    }
+
+    // Function for erasing a paragraph
+    function eraseParagraph() {
+        const currentText = paragraphs[currentParagraph];
+
+        if (index > 0) {
+            textElement.textContent = currentText.substring(0, index - 1); // Erase one character
+            index--;
+        } else {
+            // Once the paragraph is erased, move to the next one
+            currentParagraph++;
+            isErasing = false; // Reset the erasing state
+            isTypingComplete = false; // Reset the typing flag
+
+            // Stop erasing after the third paragraph is complete
+            if (currentParagraph === paragraphs.length) {
+                isAnimating = false; // Stop animation after the last paragraph
             }
         }
     }
 
-    // Start the animation from the first paragraph
+    // Function to start the typing animation for the current set
     function startInitialAnimation() {
+        if (isAnimating) return; // Prevent overlapping animations
+
         resetAnimation(); // Reset the animation state
         isAnimating = true; // Mark the animation as started
 
-        typingTimeout = setInterval(() => {
-            type(); // Call type/erase logic every interval
-            if (currentParagraph >= paragraphs.length && index === 0) {
-                clearInterval(typingTimeout); // Stop the interval once all paragraphs are erased
-                setTimeout(() => {
-                    startInitialAnimation(); // Restart animation from the first paragraph
-                }, 500); // Delay before restarting
+        function typeEraseLoop() {
+            if (isErasing && currentParagraph < 2) {
+                // Erase paragraphs except the third one
+                eraseParagraph();
+            } else if (!isErasing) {
+                // Type paragraphs
+                typeParagraph();
             }
-        }, 100); // Control typing/erasing speed (100ms interval)
+
+            // Continue typing/erasing until the current paragraph is fully handled
+            if (currentParagraph < paragraphs.length) {
+                typingTimeout = setTimeout(typeEraseLoop, 100); // Loop every 100ms
+            } else {
+                // Reset after the last paragraph is fully typed and erased
+                setTimeout(() => {
+                    isAnimating = false;
+                    // The animation stops after the last paragraph is typed without erasing it
+                }, 500); // Delay before finishing the animation
+            }
+        }
+
+        // Start the type/erase loop
+        typeEraseLoop();
     }
 
     // Change content when the button is clicked
     function changeContent() {
         console.log("Change content clicked");
 
-        if (isAnimating) {
-            resetAnimation(); // Stop the current animation immediately
-        }
-
+        // Reset the animation and start over
+        resetAnimation();
+        
         // Switch to the next content set
         currentSetIndex = (currentSetIndex + 1) % contentSets.length; // Switch content set
         paragraphs = contentSets[currentSetIndex]; // Update paragraphs to the new set
         currentParagraph = 0; // Start from the first paragraph
         index = 0; // Reset character index
-        startInitialAnimation(); // Start animation with the new content
+
+        // Start the animation with the new content
+        startInitialAnimation();
     }
 
     // Add event listener to the button for content change
-    //changeContentButton.addEventListener("click", changeContent);
+    //changeContentButton.addEventListener('click', changeContent);
     document.getElementById('lang').addEventListener('click', changeContent);
+
     // Start the initial animation when the page is loaded
     startInitialAnimation();
 });
