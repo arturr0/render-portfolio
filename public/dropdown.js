@@ -48,7 +48,7 @@ $('#aboutMe').hover(
       if (isDropdownVisible) {
         // Hide the dropdown
         dropdownContent.classList.add("hidden");
-        if (window.location.href === "https://kindhearted-hollow-cactus.glitch.me/") services.style.backgroundColor = "rgb(128, 128, 128)";
+        if (window.location.href === "https://artur-bednarski.onrender.com/") services.style.backgroundColor = "rgb(128, 128, 128)";
         else services.style.backgroundColor = "white";
         $(".dropdown-content").css("max-height", "0px");
         //$('.services').css('background-color', 'white');
