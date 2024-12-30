@@ -98,7 +98,9 @@ html(lang='en')
           .typing-container
             span#text
             span.cursor _
-          p.title(style="margin-top: 0;") Programming Languages
+          .title.description
+            descriptionEng.toggle-element.visible Programming Languages
+            descriptionPol.toggle-element Języki programowania
           .tools
             .svgText.first
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg')
@@ -112,7 +114,9 @@ html(lang='en')
             .svgText.last
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg')
               p.text Python
-          p.title Frontend Development
+          .title.description
+              descriptionEng.toggle-element.visible Frontend Development
+              descriptionPol.toggle-element Tworzenie front-endu
           .tools
             .svgText.first
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg')
@@ -120,7 +124,9 @@ html(lang='en')
             .svgText.last
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg')
               p.text CSS
-          p.title Backend Development
+          .title.description
+              descriptionEng.toggle-element.visible Backend Development
+              descriptionPol.toggle-element Tworzenie back-endu
           .tools
             .svgText.first
               img.logo(src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg")
@@ -137,12 +143,16 @@ html(lang='en')
             .svgText.last
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg')
               p.text PostgreSQL
-          p.title Mobile Development
+          .title.description
+              descriptionEng.toggle-element.visible Mobile Development
+              descriptionPol.toggle-element Tworzenie aplikacji mobilnych
           .tools
             .svgText(style="margin-left: auto; margin-right: auto;")
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg')
               p.text Android
-          p.title Electromechanical Engineering & Software Tools
+          p.title 
+            descriptionEng.toggle-element.visible Electromechanical Engineering & Software Tools
+            descriptionPol.toggle-element Inżynieria elektomechaniczna
           .tools(style="margin-bottom: 10px;")
             .svgText.first
               img.logo(src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/labview/labview-original.svg')
