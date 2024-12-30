@@ -119,25 +119,33 @@ $('#aboutMe').hover(
       }
     );
   });
-if (isTouchDevice() && isCurrentURL('https://artur-bednarski.onrender.com') && isDropdownVisible) {
+// if (isTouchDevice() && isCurrentURL('https://artur-bednarski.onrender.com') && isDropdownVisible) {
+//         services.style.backgroundColor = "rgb(128, 128, 128)"
+//         // Add your logic here for touch devices on this specific URL
+//     } else {
+//         console.log('Either not a touch device or not on the specific URL.');
+//     }
+//     function isTouchDevice() {
+//     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+// }
+
+// // Function to check if the current URL matches a certain URL
+// function isTouchDevice() {
+//     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+// }
+
+// // Function to check if the current URL matches a certain URL
+// function isCurrentURL(targetURL) {
+//     return window.location.href === targetURL;
+// }
+document.addEventListener('touchstart', (event) => {
+    if (window.location.href == 'https://artur-bednarski.onrender.com' && isDropdownVisible) {
         services.style.backgroundColor = "rgb(128, 128, 128)"
         // Add your logic here for touch devices on this specific URL
     } else {
         console.log('Either not a touch device or not on the specific URL.');
     }
-    function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-}
-
-// Function to check if the current URL matches a certain URL
-function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-}
-
-// Function to check if the current URL matches a certain URL
-function isCurrentURL(targetURL) {
-    return window.location.href === targetURL;
-}
+});
   function hidemenu() {
     $(".dropdown-content").css("display", "none");
   }
