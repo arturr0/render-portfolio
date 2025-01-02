@@ -81,7 +81,8 @@ html {
 /*             margin-top: auto;
             margin-bottom: auto; */
             padding: 5px;
-            font-size: 18px;
+            font-size: 3vh;
+            
 
         }
 @font-face {
@@ -156,6 +157,9 @@ html {
   }
   .main .mainContent #homeContent {
     width: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .main .tools {
    display: inline-flex;
@@ -389,6 +393,9 @@ html {
   border-radius: 10px;
   font-weight: bold;
   position: relative;
+  display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .content .menu #aboutMe {
     margin-left: 0;
@@ -731,8 +738,8 @@ html {
   position: relative;
   z-index: 0;
   display: flex;
-  justify-content: center;
-  
+    justify-content: center;
+    align-items: center;
 }
 #eng, #pol, #textEng, #textPol {
   position: absolute;
