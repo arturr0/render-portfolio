@@ -919,20 +919,23 @@ html {
   font-size: 20px;
 }
 .longprojectTitle {
-  height: 30px;
+  height: 50px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
   display: flex;
   justify-content: center;
+  font-size: 20px;
+  
 }
 .longerprojectTitle {
-  height: 40px;
+  height: 70px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
   display: flex;
   justify-content: center;
+  font-size: 20px;
 }
 .engTitle, .polTitle {
   position: absolute;
