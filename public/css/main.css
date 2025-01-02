@@ -220,7 +220,7 @@ html {
     border: none;
   }
   .main .longerprojectTitle {
-  height: 60px;
+  height: 70px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -229,7 +229,7 @@ html {
   justify-content: center;
 }
   .main .longprojectTitle {
-  height: 40px;
+  height: 50px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -919,7 +919,7 @@ html {
   font-size: 20px;
 }
 .longprojectTitle {
-  height: 50px;
+/*   height: 50px; */
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -929,7 +929,7 @@ html {
   
 }
 .longerprojectTitle {
-  height: 70px;
+/*   height: 70px; */
   padding: 10px;
   font-weight: bold;
   text-align: center;
