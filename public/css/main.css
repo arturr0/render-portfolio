@@ -70,7 +70,7 @@ html {
         } */
         .logo {
             width: auto;
-            height: 20px;
+            height: 4vh;
             margin-top: auto;
             margin-bottom: auto;
             padding: 6px;
@@ -716,11 +716,11 @@ html {
   box-sizing: border-box;
   padding: 0 10px 10px 10px;  
 }
-#center {
+/* #center {
   height: 100%; /* Take up 100% of the parent's height */
   width: 100%;
-  margin: auto;
-}
+/*   margin: auto; */
+} */
 #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
@@ -730,6 +730,8 @@ html {
   font-weight: bold;
   position: relative;
   z-index: 0;
+  display: flex;
+  justify-content: center;
   
 }
 #eng, #pol, #textEng, #textPol {
