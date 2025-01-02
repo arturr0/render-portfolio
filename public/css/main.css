@@ -394,9 +394,10 @@ html {
   border-radius: 10px;
   font-weight: bold;
   position: relative;
-  display: flex;
-/*     justify-content: center;
-    align-items: center; */
+  display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .content .menu #aboutMe {
     margin-left: 0;
