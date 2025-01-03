@@ -220,7 +220,7 @@ html {
     border: none;
   }
   .main .longerprojectTitle {
-  height: 70px;
+  height: 90px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -912,7 +912,7 @@ html {
 }
 
 .projectTitle {
-  height: 20px;
+/*   height: 20px; */
   padding: 10px;
   font-weight: bold;
   display: grid;
