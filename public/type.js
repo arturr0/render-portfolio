@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
         function typeEraseLoop() {
             if (isErasing && currentParagraph < 2) {
                 eraseParagraph();
-                typingTimeout = setTimeout(typeEraseLoop, 50); // Faster erasing
+                typingTimeout = setTimeout(typeEraseLoop, 25); // Faster erasing
             } else if (!isErasing) {
                 typeParagraph();
-                typingTimeout = setTimeout(typeEraseLoop, 75); // Slower typing
+                typingTimeout = setTimeout(typeEraseLoop, 60); // Slower typing
             } else {
                 if (currentParagraph < paragraphs.length) {
                     typingTimeout = setTimeout(typeEraseLoop, 200);
