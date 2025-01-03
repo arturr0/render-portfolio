@@ -929,6 +929,12 @@ html {
   font-size: 20px;
   
 }
+#sql {
+  padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    display: grid;
+}
 .longerprojectTitle {
 /*   height: 70px; */
   padding: 10px;
