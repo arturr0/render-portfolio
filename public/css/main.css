@@ -822,7 +822,9 @@ html {
   border-radius: 10px;
   position: sticky;
 }
-
+.projectImg: hover {
+  border: 2px solid white;
+}
 .git, .link, .tech {
   position: relative;
  
@@ -897,6 +899,13 @@ html {
 }
 #lang {
   background-color: #808080;
+  border: 2px solid transparent;
+  
+}
+#lang {
+  background-color: #808080;
+  border: 2px solid black;
+  
 }
 .menu div {
   margin: 0;
