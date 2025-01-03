@@ -163,12 +163,12 @@ $('#aboutMe').hover(
   // 'visit' item persists in storage for the remainder of the user session
   function display() {
     $("#viewer").css("display", "flex")
-    $("#homeContent").css("display", "none")
+    $("#homeContentPojects").css("display", "none")
   }
   
   function back() {
     $("#viewer").css("display", "none")
-    $("#homeContent").css("display", "block")
+    $("#homeContentPojects").css("display", "block")
   }
 // Function to check if the device supports touch input
 function isTouchDevice() {
