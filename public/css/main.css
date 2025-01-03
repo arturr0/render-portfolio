@@ -822,9 +822,9 @@ html {
   border-radius: 10px;
   position: sticky;
 }
-.projectImg: hover {
+/* .projectImg: hover {
   border: 2px solid white;
-}
+} */
 .git, .link, .tech {
   position: relative;
  
