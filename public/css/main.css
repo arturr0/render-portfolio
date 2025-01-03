@@ -822,7 +822,7 @@ html {
   border-radius: 10px;
   position: sticky;
 }
-.projectImg: hover {
+.projectImg:hover {
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -881,7 +881,10 @@ html {
   border: 2px solid transparent;
 
 }
-#eng: hover, #pol: hover {
+#eng:hover {
+  border: 2px solid black;
+}
+#pol:hover {
   border: 2px solid black;
 }
 .aboutLeft {
@@ -905,7 +908,7 @@ html {
 }
 #lang {
   background-color: #808080;
-  border: 2px solid transparent;
+  
   
 }
 
@@ -968,7 +971,7 @@ html {
   width: 45px;
   padding-left: 60px;
   background-color: rgb(128,128,128);
-  height: 54px;
+/*   height: 54px; */
 }
 #textEng {
   text-align: justify;
