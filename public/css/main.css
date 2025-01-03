@@ -220,19 +220,20 @@ html {
     border: none;
   }
   .main .longerprojectTitle {
-  height: 70px;
+  height: 90px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
   .main .longprojectTitle {
-  height: 70px;
+  height: 80px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
+  display: grid;
 }
   .menu #visitEng, #visitPol {
     position: absolute;
@@ -821,7 +822,9 @@ html {
   border-radius: 10px;
   position: sticky;
 }
-
+/* .projectImg: hover {
+  border: 2px solid white;
+} */
 .git, .link, .tech {
   position: relative;
  
@@ -832,6 +835,7 @@ html {
 }
 .description {
   display: grid;
+  margin-left: 10px;
 } 
 .borderContent {
   margin-right: 4px;
@@ -895,6 +899,13 @@ html {
 }
 #lang {
   background-color: #808080;
+  border: 2px solid transparent;
+  
+}
+#lang {
+  background-color: #808080;
+  border: 2px solid black;
+  
 }
 .menu div {
   margin: 0;
@@ -911,10 +922,10 @@ html {
 }
 
 .projectTitle {
-  height: 20px;
+/*   height: 20px; */
   padding: 10px;
   font-weight: bold;
-  display: flex;
+  display: grid;
   justify-content: center;
   font-size: 20px;
 }
@@ -923,8 +934,16 @@ html {
   padding: 10px;
   font-weight: bold;
   text-align: center;
-  display: flex;
+  display: grid;
   justify-content: center;
+  font-size: 20px;
+  
+}
+#sql {
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
   font-size: 20px;
   
 }
@@ -933,12 +952,14 @@ html {
   padding: 10px;
   font-weight: bold;
   text-align: center;
-  display: flex;
+  display: grid;
   justify-content: center;
   font-size: 20px;
 }
 .engTitle, .polTitle {
-  position: absolute;
+/*   position: absolute; */
+  grid-area: 1/1;
+  text-align: center;
 }
 #lang {
   position: relative;
