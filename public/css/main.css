@@ -229,7 +229,7 @@ html {
   justify-content: center;
 }
   .main .longprojectTitle {
-  height: 70px;
+  height: 80px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
@@ -941,6 +941,7 @@ html {
 .engTitle, .polTitle {
 /*   position: absolute; */
   grid-area: 1/1;
+  text-align: center;
 }
 #lang {
   position: relative;
