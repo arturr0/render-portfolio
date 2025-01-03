@@ -833,6 +833,7 @@ html {
 }
 .description {
   display: grid;
+  margin-left: 10px;
 } 
 .borderContent {
   margin-right: 4px;
@@ -931,9 +932,11 @@ html {
 }
 #sql {
   padding: 10px;
-    font-weight: bold;
-    text-align: center;
-    display: grid;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  font-size: 20px;
+  
 }
 .longerprojectTitle {
 /*   height: 70px; */
