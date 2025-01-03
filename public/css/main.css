@@ -846,6 +846,9 @@ html {
   width: 900px;
   height: auto;
 }
+#displayed-image:hover {
+  border: 2px solid black;
+}
 /* .projectTitle {
        padding: 10px;
        font-weight: bold;
