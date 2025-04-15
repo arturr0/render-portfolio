@@ -11,9 +11,9 @@ html(lang='en')
       }
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
     meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='public/css/main.css')
-    link(rel="stylesheet", href='public/css/fontello.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='public/css/main.css')
+    link(rel="stylesheet" href='public/css/fontello.css')
     title My Projects
     script(type='text/javascript').
       let views = 0;
@@ -49,9 +49,9 @@ html(lang='en')
       } else {
         // If not a page load or refresh, check if it's a specific page
         if (prevURL != 'https://artur-bednarski.onrender.com/applications' &&
-            prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
-            prevURL != 'https://artur-bednarski.onrender.com/games' &&
-            prevURL != 'https://artur-bednarski.onrender.com/') {
+          prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
+          prevURL != 'https://artur-bednarski.onrender.com/games' &&
+          prevURL != 'https://artur-bednarski.onrender.com/') {
           updateCounter("type=pageview")
           .then((data) => {
             views = data.pageviews;
@@ -122,9 +122,9 @@ html(lang='en')
               .tables 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
-                      i.icon-cogs
-                      p.borderContent
-                        | JavaScript, HTML5, CSS, WebSocket, Crypto, JWT, SQL
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, WebSocket, Crypto, JWT, SQL
                 a(href='https://pine-lucky-bison.glitch.me' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
                     div.border(style="white-space: nowrap;") 
@@ -132,6 +132,36 @@ html(lang='en')
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/CipherConnect2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+            hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
+            div.project
+              .projectTitle
+                | "CIPHER CONNECT"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
+                .description
+                  .descriptionEng.toggle-element.visible
+                    | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
+                  .descriptionPol.toggle-element
+                    | Aplikacja API oparta na NestJS, służąca do oceniania filmów oraz osób związanych z kinem. Użytkownicy mogą oceniać filmy, aktorów i reżyserów, a aktualizacje w czasie rzeczywistym są realizowane za pomocą Server-Sent Events (SSE). Uwierzytelnianie i bezpieczeństwo obsługiwane są za pomocą JWT oraz bcrypt, które zapewniają bezpieczne haszowanie haseł. Aplikacja udostępnia uporządkowane RESTful API do zarządzania filmami, rankingami i użytkownikami. Dane filmowe pochodzą z bazy The Movie Database (TMDB), co gwarantuje ich aktualność i wiarygodność.
+              .tables 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, NestJS, SSE, PostreSQL, Bcrypt, JWT
+                a(href='https://movieranker-gavh.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
+                  .linkEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-globe
+                      p.borderContent
+                        | Link
+                a(href='https://github.com/arturr0/MovieRanker' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
                     div.border(style="white-space: nowrap;") 
                       i.icon-github-circled
@@ -152,9 +182,9 @@ html(lang='en')
               .tables(style="margin-bottom: 10px;") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
-                      i.icon-cogs
-                      p.borderContent
-                        | JavaScript, HTML5, CSS, Express.JS  
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, Express.JS  
                 a(href='https://nostalgic-caterwauling-nylon.glitch.me/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
                     div.border(style="white-space: nowrap;") 
@@ -183,9 +213,9 @@ html(lang='en')
               .tables(style="margin-bottom: 10px;") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
-                      i.icon-cogs
-                      p.borderContent
-                        | Visual Basic for Applications  
+                    i.icon-cogs
+                    p.borderContent
+                      | Visual Basic for Applications  
                 a(href='https://github.com/arturr0/VBA-scripts' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
                     div.border(style="white-space: nowrap;") 
@@ -208,9 +238,9 @@ html(lang='en')
               .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
-                      i.icon-cogs
-                      p.borderContent
-                        | C++, SQL
+                    i.icon-cogs
+                    p.borderContent
+                      | C++, SQL
                 a(href='https://github.com/arturr0/C-SQL-handler' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
                     div.border(style="white-space: nowrap;") 
@@ -222,4 +252,4 @@ html(lang='en')
       document.getElementById('visitEng').textContent = "Visits: " + storedViews;
       document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
     script(src='public/dropdown.js')
-    
+
