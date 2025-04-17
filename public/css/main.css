@@ -193,8 +193,8 @@ html {
   position: relative;
   width: 45px;
   padding: 0;
-  background-color: rgb(128,128,128, 0.9);
-  height: 54px;
+  /* background-color: rgb(128,128,128, 0.9); */
+  /* height: 54px; */
   
 }
   .main #textPol {
@@ -241,11 +241,11 @@ html {
   .menu #visitEng, #visitPol {
     position: absolute;
     font-size: 12px;
-    width: 50px;
+    /* width: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
   .menu #visits {
     position: relative;
