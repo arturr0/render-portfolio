@@ -527,7 +527,7 @@ html {
 #aboutMe {
   position: relative;
   height: 54px;
-  min-width: 90px;
+  min-width: 100px;
   text-align: center;
   margin-left: 50px;
   margin: 0;
