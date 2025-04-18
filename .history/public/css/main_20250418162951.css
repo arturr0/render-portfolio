@@ -334,7 +334,7 @@ hr {
 
 }
   
-}
+
 @media (max-device-width: 1200px) {
   .menu .homeLink .services,
   .about #pageviews-count {
@@ -353,7 +353,7 @@ hr {
        font-size: 20px;
        height: auto; /* Allow the height to adjust based on the content */
 /*        min-height: 20px; /* Ensure it has a minimum height */ 
-   } */
+   
 .hidden {
   display: none;
   user-select: text;
@@ -365,7 +365,7 @@ hr {
        font-size: 20px;
        height: auto; /* Allow the height to adjust based on the content */
 /*        min-height: 20px; /* Ensure it has a minimum height */ 
-   } */
+   
   .menu .dropdown .dropdown-content {
     max-height: 1000px;
     overflow: hidden;
@@ -587,7 +587,7 @@ hr {
 #projects:hover {
   font-size: 20px;
 }
-}
+
 #projectsEng, #projectsPol {
   /* position: absolute; */
   display: flex;
@@ -698,7 +698,12 @@ hr {
 .filler {
   flex-grow: 1;
 }
-  
+@media (hover: hover) and (pointer: fine) {
+  .svgText .devicon-socketio-original {
+    font-size: 28px;
+    /* padding: 7px; */
+  }
+  }
 .submenu {
   position: absolute; 
   top: 3px; 
@@ -776,11 +781,8 @@ hr {
   box-sizing: border-box;
   padding: 0 10px 10px 10px;  
 }
-/* #center {
-  height: 100%; /* Take up 100% of the parent's height */
-  width: 100%;
-/*   margin: auto; */
-} */
+
+
 #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
@@ -1036,16 +1038,10 @@ hr {
 }
 .menu .dropdown:hover .dropdown-content {
   max-height: 300px; /* Adjust based on your dropdown size */
-/*   overflow: auto; /* Ensure scroll if content exceeds max-height */ */ */
+/*   overflow: auto; /* Ensure scroll if content exceeds max-height */ 
   transition: max-height 0.7s ease;
 }
 .service:hover {
   background-color: rgba(255, 29, 21, 0.9)
 
 }
-@media (hover: hover) and (pointer: fine) {
-  .svgText .devicon-socketio-original {
-    font-size: 28px;
-    /* padding: 7px; */
-  }
-  }
