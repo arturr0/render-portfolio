@@ -10,7 +10,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 10px 10px  #84ff0f;
+  box-shadow: inset 0 0 10px 10px white;
   border: solid 3px transparent;
 }
 body {
@@ -21,16 +21,13 @@ body {
   overflow-x: auto;
   width: 100%;
   color: white;
-  font-weight: bolder;
   
 }
 html {
   overflow-x: auto;
 }
 hr {
-  background-color: #84ff0f;
-  box-shadow: 0 0 3px #84ff0f;
-  height: 2px;
+  color: #84ff0f;
 }
 .imageDescription {
   display: flex;
@@ -41,13 +38,12 @@ hr {
         }
         .svgText {
             display: flex;
-            border: solid 3px#84ff0f;
-            box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+            border: solid 3px#84ff0f;;
             /* height: 80px; */
             border-radius: 40px;
             margin-right: 10px;
             align-items: center;
-            background-color: #001d15;
+            background-color: black;
         }
         .first {
           margin-left: auto;
@@ -151,8 +147,8 @@ hr {
   }
   .main .svgText {
     display: flex;
-    border: solid 3px #84ff0f;
-    box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+    border: solid 3px black;
+/*     height: 80px; */
     border-radius: 40px;
     margin-left: 0;
     margin-right: 0;
@@ -184,8 +180,6 @@ hr {
   .main .svgText {
     margin-bottom: 10px;
     border: solid 2px #84ff0f;
-    box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
-    background-color: #001d15;
   }
   ::-webkit-scrollbar {
   width: 0px;
@@ -402,7 +396,7 @@ hr {
   }
   .main .mainContent #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
-  height: 100%; /* Take up 100% of the parent's height */
+  height: 97%; /* Take up 100% of the parent's height */
   width: 100%;
   /* background-color: rgba(176,196,222, 0.8); */
   border-radius: 10px;
@@ -474,12 +468,11 @@ hr {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
   padding: 2px;
-  border: solid 3px#84ff0f;
-  box-shadow: 0 0 5px #84ff0f;
+  border: solid 3px#84ff0f;;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #001d15;
+  background: black;
 }
   .main .tech, .linkEng, .gitEng {
     margin-right: 5px;
@@ -556,8 +549,7 @@ hr {
   margin-right: auto;
   text-decoration: none;
   color: #84ff0f;
-  transition: opacity 0.5s ease, visibility 0.5s ease, font-size 0.3s ease;
-
+  transition: font-size 0.3s ease;
 }
 #engAbout:hover, #polAbout:hover {
   font-size: 20px;
@@ -751,7 +743,6 @@ hr {
   margin-left: 3px;
   margin-right: 3px;
   border-radius: 20px;
-  object-fit: cover;
 }
 
 .main {
@@ -794,7 +785,7 @@ hr {
 .tables:not(#Ctables) {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  
   margin-top: 10px;
   max-width: 45%;
 }
@@ -814,8 +805,7 @@ hr {
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   padding: 2px;
-  border: solid 3px #84ff0f;
-  box-shadow: 0 0 5px #84ff0f;
+  border: solid 3px black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -849,17 +839,16 @@ hr {
 }
 .projectImg {
 
-  /* width: auto; */
-  height: auto;
-  width: 672px; 
+  width: auto;
+  height: 400px;
+/*   width: 672px; Ensure the image doesn't exceed its original size */
   display: block; /* Prevents extra space below inline-block images */
   border: 2px solid #84ff0f;
   border-radius: 10px;
   position: sticky;
 }
 .projectImg:hover {
-  /* border: 2px solid white; */
-  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+  border: 2px solid black;
   border-radius: 10px;
 }
 .git, .link, .tech {
@@ -869,7 +858,6 @@ hr {
 .descriptionEng, .descriptionPol {
   grid-area: 1/1;
   user-select: text;
-  font-size: 20px;
 }
 .description {
   display: grid;
@@ -884,7 +872,7 @@ hr {
   height: auto;
 }
 #displayed-image:hover {
-  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+  border: 2px solid black;
 }
 /* .projectTitle {
        padding: 10px;
@@ -1022,7 +1010,7 @@ hr {
   
 }
 .border:not(.not):hover {
-  background-color: #84ff0f;
+  background-color: rgb(65,105,225);
 }
 .menu .dropdown:hover .dropdown-content {
   max-height: 300px; /* Adjust based on your dropdown size */

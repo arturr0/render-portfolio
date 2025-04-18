@@ -21,7 +21,6 @@ body {
   overflow-x: auto;
   width: 100%;
   color: white;
-  font-weight: bolder;
   
 }
 html {
@@ -29,8 +28,7 @@ html {
 }
 hr {
   background-color: #84ff0f;
-  box-shadow: 0 0 3px #84ff0f;
-  height: 2px;
+  height: 1px;
 }
 .imageDescription {
   display: flex;
@@ -47,7 +45,7 @@ hr {
             border-radius: 40px;
             margin-right: 10px;
             align-items: center;
-            background-color: #001d15;
+            background-color: black;
         }
         .first {
           margin-left: auto;
@@ -185,7 +183,7 @@ hr {
     margin-bottom: 10px;
     border: solid 2px #84ff0f;
     box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
-    background-color: #001d15;
+
   }
   ::-webkit-scrollbar {
   width: 0px;
@@ -475,11 +473,11 @@ hr {
   border-top-left-radius: 20px;
   padding: 2px;
   border: solid 3px#84ff0f;
-  box-shadow: 0 0 5px #84ff0f;
+  box-shadow: 0 0 5px #84ff0f, 0 0 5px #84ff0f;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #001d15;
+  background: black;
 }
   .main .tech, .linkEng, .gitEng {
     margin-right: 5px;
@@ -556,8 +554,7 @@ hr {
   margin-right: auto;
   text-decoration: none;
   color: #84ff0f;
-  transition: opacity 0.5s ease, visibility 0.5s ease, font-size 0.3s ease;
-
+  transition: font-size 0.3s ease;
 }
 #engAbout:hover, #polAbout:hover {
   font-size: 20px;
@@ -815,7 +812,7 @@ hr {
   border-top-left-radius: 25px;
   padding: 2px;
   border: solid 3px #84ff0f;
-  box-shadow: 0 0 5px #84ff0f;
+  box-shadow: 0 0 5px #84ff0f, 0 0 5px #84ff0f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -858,8 +855,7 @@ hr {
   position: sticky;
 }
 .projectImg:hover {
-  /* border: 2px solid white; */
-  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+  border: 2px solid white;
   border-radius: 10px;
 }
 .git, .link, .tech {
@@ -869,7 +865,6 @@ hr {
 .descriptionEng, .descriptionPol {
   grid-area: 1/1;
   user-select: text;
-  font-size: 20px;
 }
 .description {
   display: grid;
@@ -884,7 +879,7 @@ hr {
   height: auto;
 }
 #displayed-image:hover {
-  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+  border: 2px solid white;
 }
 /* .projectTitle {
        padding: 10px;

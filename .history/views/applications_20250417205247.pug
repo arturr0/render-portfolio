@@ -1,7 +1,6 @@
 doctype html
 html(lang='en')
   head
-    link(rel="preload" as="image" href="https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039")
     link(rel="shortcut icon" href="https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/programming.ico?v=1736005461895")
     style.
       //- #aboutMe {
@@ -113,14 +112,8 @@ html(lang='en')
               .projectTitle
                 | "CIPHER CONNECT"
               .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
-                .description
-                  .descriptionEng.toggle-element.visible
-                    | Real-time chat application allows seamless communication between users. Messages are delivered instantly to all connected users using WebSocket technology, ensuring fast and efficient communication. Users are securely authenticated with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of their conversations. The application uses an SQLite database to store user credentials, messages, and interactions, providing reliable and lightweight data management. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security. The chat application is compatible across multiple devices, making communication flexible and accessible.
-                  .descriptionPol.toggle-element
-                    | Aplikacja do czatu w czasie rzeczywistym umożliwiająca płynną komunikację między użytkownikami. Wiadomości są dostarczane natychmiastowo do wszystkich połączonych użytkowników dzięki technologii WebSocket, która zapewnia szybkie i efektywne działanie. Użytkownicy są bezpiecznie uwierzytelniani za pomocą JSON Web Tokens (JWT), standardu autoryzacji, który chroni prywatność i integralność ich rozmów. Aplikacja korzysta z bazy danych SQLite do przechowywania danych użytkowników, wiadomości i interakcji, co zapewnia niezawodne i lekkie zarządzanie danymi. Wrażliwe informacje są zabezpieczane za pomocą zaawansowanych algorytmów kryptograficznych, aby zapewnić maksymalne bezpieczeństwo. Aplikacja czatu działa na wielu urządzeniach, co umożliwia elastyczną i wygodną komunikację.
-              .tables 
+                .imgTables
+                  .tables 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
@@ -138,6 +131,13 @@ html(lang='en')
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
+                .image
+                  img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
+                .description
+                  .descriptionEng.toggle-element.visible
+                    | Real-time chat application allows seamless communication between users. Messages are delivered instantly to all connected users using WebSocket technology, ensuring fast and efficient communication. Users are securely authenticated with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of their conversations. The application uses an SQLite database to store user credentials, messages, and interactions, providing reliable and lightweight data management. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security. The chat application is compatible across multiple devices, making communication flexible and accessible.
+                  .descriptionPol.toggle-element
+                    | Aplikacja do czatu w czasie rzeczywistym umożliwiająca płynną komunikację między użytkownikami. Wiadomości są dostarczane natychmiastowo do wszystkich połączonych użytkowników dzięki technologii WebSocket, która zapewnia szybkie i efektywne działanie. Użytkownicy są bezpiecznie uwierzytelniani za pomocą JSON Web Tokens (JWT), standardu autoryzacji, który chroni prywatność i integralność ich rozmów. Aplikacja korzysta z bazy danych SQLite do przechowywania danych użytkowników, wiadomości i interakcji, co zapewnia niezawodne i lekkie zarządzanie danymi. Wrażliwe informacje są zabezpieczane za pomocą zaawansowanych algorytmów kryptograficznych, aby zapewnić maksymalne bezpieczeństwo. Aplikacja czatu działa na wielu urządzeniach, co umożliwia elastyczną i wygodną komunikację.
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project
               .projectTitle
