@@ -158,6 +158,10 @@ hr {
     margin-right: 0;
 
   }
+  .svgText i {
+    font-size: 30px;
+  padding: 7px;
+  }
   .main .first {
     margin-left: auto;
     margin-right: auto;
