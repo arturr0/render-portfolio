@@ -33,9 +33,9 @@ hr {
   box-shadow: 0 0 3px #84ff0f;
   height: 2px;
 }
-/* .imageDescription {
+.imageDescription {
   display: flex;
-} */
+}
 .tools {
             display: flex;
 /*             justify-content: center; */
@@ -1057,7 +1057,7 @@ hr {
   .description {
     transition: opacity 0.3s ease;
     opacity: 1;
-    font-size: 1.4rem;
+    font-size: 20px;
   }
   .fade-out {
     opacity: 0;

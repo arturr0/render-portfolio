@@ -33,9 +33,9 @@ hr {
   box-shadow: 0 0 3px #84ff0f;
   height: 2px;
 }
-/* .imageDescription {
+.imageDescription {
   display: flex;
-} */
+}
 .tools {
             display: flex;
 /*             justify-content: center; */
