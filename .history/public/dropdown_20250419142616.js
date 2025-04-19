@@ -7,17 +7,17 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-  
+  console.log(a);
   function changeAllTexts() {
     const paragraphs = document.querySelectorAll('.description');
-    
+    showAlt = !showAlt;
 
     paragraphs.forEach((p, i) => {
       p.classList.add('fade-out');
 
       // Wait for fade out
       setTimeout(() => {
-        p.textContent = projectTxt[i][eng ? 0 : 1];
+        p.textContent = projectTxt[i][showAlt ? 1 : 0];
         p.classList.remove('fade-out');
       }, 180); // should match CSS transition duration
     });

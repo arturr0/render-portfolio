@@ -7,21 +7,7 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-  
-  function changeAllTexts() {
-    const paragraphs = document.querySelectorAll('.description');
-    
-
-    paragraphs.forEach((p, i) => {
-      p.classList.add('fade-out');
-
-      // Wait for fade out
-      setTimeout(() => {
-        p.textContent = projectTxt[i][eng ? 0 : 1];
-        p.classList.remove('fade-out');
-      }, 180); // should match CSS transition duration
-    });
-  }
+  console.log(a);
   $(document).ready(function () {
   
     console.log("drop");

@@ -1051,7 +1051,7 @@ hr {
     /* padding: 7px; */
   }
   }
-  .description {
+  .text-container {
     transition: opacity 0.3s ease;
     opacity: 1;
   }

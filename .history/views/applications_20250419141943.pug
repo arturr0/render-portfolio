@@ -98,7 +98,7 @@ html(lang='en')
         div#visits
           a#visitEng.visits.toggle-element.visible
           a#visitPol.visits.toggle-element
-        div#lang(onclick="toggleElements(); changeAllTexts();")
+        div#lang(onclick="toggleElements()")
           img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/POL.jpg?v=1699542939034')#eng.toggle-element.visible
           img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/UK.jpg?v=1699539920089')#pol.toggle-element  
         div.rightCorner
@@ -143,7 +143,10 @@ html(lang='en')
                 .image
                   img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
                 .description
-                  | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
+                  .descriptionEng.toggle-element.visible
+                    | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
+                  .descriptionPol.toggle-element
+                    | Aplikacja API oparta na NestJS, służąca do oceniania filmów oraz osób związanych z kinem. Użytkownicy mogą oceniać filmy, aktorów i reżyserów, a aktualizacje w czasie rzeczywistym są realizowane za pomocą Server-Sent Events (SSE). Uwierzytelnianie i bezpieczeństwo obsługiwane są za pomocą JWT oraz bcrypt, które zapewniają bezpieczne haszowanie haseł. Aplikacja udostępnia uporządkowane RESTful API do zarządzania filmami, rankingami i użytkownikami. Dane filmowe pochodzą z bazy The Movie Database (TMDB), co gwarantuje ich aktualność i wiarygodność.
               .tables 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
@@ -170,7 +173,10 @@ html(lang='en')
                 .image
                   img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/new.bmp?v=1714693587866' onclick="display()").projectImg
                 .description
-                  | An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.
+                  .descriptionEng.toggle-element.visible
+                    | An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.
+                  .descriptionPol.toggle-element
+                    | Interfejs API oparty o funkcje CRUD (create, read, update, delete). “Warehouse API” umożliwia przechowywanie i aktualizowanie stanu magazynowego produktów. Aby wprowadzić nowy produkt należy wpisać jego nazwę i ilość w odpowiednie okna, a następnie kliknąć przycisk CREATE PRODUCT. Ilość produktów przedstawiają wykresy słupkowe (kod renderowania wykresów napisany jest w bibliotece P5.JS). Przycisk UPDATE podmienia nazwę produktu lub ilość na nową. Ilość można aktualizować przyciskami "+" i "-".    
               .tables(style="margin-bottom: 10px;") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
@@ -198,7 +204,10 @@ html(lang='en')
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
                 .description
-                  | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
+                  .descriptionEng.toggle-element.visible
+                    | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
+                  .descriptionPol.toggle-element
+                    | Zestaw skryptów Visual Basic for Applications do automatycznej migracji danych pomiędzy MS Word a MS Excel.    
               .tables(style="margin-bottom: 10px;") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
@@ -220,7 +229,10 @@ html(lang='en')
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
                 .description
-                  | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
+                  .descriptionEng.toggle-element.visible
+                    | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
+                  .descriptionPol.toggle-element
+                    | Aplikacja do zarządzania bazą danych SQL, która wykorzystuje C++ oraz interfejs ODBC do komunikacji z serwerem Microsoft SQL Server. Program umożliwia tworzenie kont użytkowników, logowanie oraz aktualizację kont. Aplikacja zapewnia obsługę błędów i walidację danych, oferując bezpieczny i efektywny sposób zarządzania danymi użytkowników. Interfejs pozwala na wykonywanie operacji CRUD, w tym walidację danych wejściowych oraz wyświetlanie komunikatów o błędach związanych z interakcją z bazą danych.
               .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
