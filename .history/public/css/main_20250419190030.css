@@ -69,7 +69,6 @@ hr {
           text-align: center;
           margin: 10px;
           font-size: 20px;
-          display: grid;
         }
         .typing-container {
           text-align: center;
@@ -1062,4 +1061,15 @@ hr {
   }
   .fade-out {
     opacity: 0;
+  }
+  .content {
+    height: 57px; 
+    /* background-color: #84ff0f; */
+    transition: height 0.4s ease, opacity 0.4s ease;
+    overflow: hidden;
+  }
+  .content.collapsed {
+    height: 0;
+    opacity: 0;
+    /* transform: translateY(-100%); */
   }

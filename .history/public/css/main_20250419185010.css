@@ -18,12 +18,26 @@ body {
   font-size: 17px;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
+  overflow: hidden;
   width: 100%;
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 5px #000, 0 0 10px #000;
   
+}
+html {
+  overflow: hidden;
+}
+.content {
+  height: 57px; 
+  /* background-color: #84ff0f; */
+  transition: height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+.content.collapsed {
+  height: 0;
+  opacity: 0;
+  /* transform: translateY(-100%); */
 }
 html {
   overflow-x: auto;
@@ -69,7 +83,6 @@ hr {
           text-align: center;
           margin: 10px;
           font-size: 20px;
-          display: grid;
         }
         .typing-container {
           text-align: center;
@@ -767,8 +780,11 @@ hr {
   object-fit: cover;
 }
 
-.main {
+#main {
   height: calc(100vh - 60px);
+}
+#main.full {
+  height: 95vh;
 }
 .mainContent {
   display: flex;

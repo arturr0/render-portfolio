@@ -69,7 +69,6 @@ hr {
           text-align: center;
           margin: 10px;
           font-size: 20px;
-          display: grid;
         }
         .typing-container {
           text-align: center;
@@ -807,7 +806,7 @@ hr {
 .tables:not(#Ctables) {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 10px;
   max-width: 45%;
 }
@@ -856,8 +855,7 @@ hr {
   flex-direction: column;
 }
 .image {
-  
-  
+  position: relative;
   float: left;
 }
 .projectImg {
@@ -988,9 +986,13 @@ hr {
 /*   height: 20px; */
   padding: 10px;
   font-weight: bold;
-  display: grid;
-  justify-content: center;
+  /* display: grid; */
+  /* justify-content: center; */
   font-size: 20px;
+  position: absolute;
+  top: 5;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .longprojectTitle {
 /*   height: 50px; */

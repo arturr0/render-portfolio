@@ -25,6 +25,11 @@ body {
   text-shadow: 0 0 5px #000, 0 0 10px #000;
   
 }
+
+.menu.collapsed {
+  height: 0;
+  opacity: 0;
+}
 html {
   overflow-x: auto;
 }
@@ -69,7 +74,6 @@ hr {
           text-align: center;
           margin: 10px;
           font-size: 20px;
-          display: grid;
         }
         .typing-container {
           text-align: center;

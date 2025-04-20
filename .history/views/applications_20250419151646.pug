@@ -110,9 +110,9 @@ html(lang='en')
         #homeContentPojects
           #textEng(style="width: 100%;")
             div.project
-              .projectTitle
-                | "CIPHER CONNECT"
               .imageDescription
+                .projectTitle
+                  | "CIPHER CONNECT"
                 .image
                   img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
                 .description
@@ -137,10 +137,10 @@ html(lang='en')
                         | GitHub
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project
-              .projectTitle
-                | "MOVIE RANKER"
               .imageDescription
                 .image
+                  .projectTitle
+                    | "MOVIE RANKER"
                   img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
                 .description
                   | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
@@ -164,10 +164,10 @@ html(lang='en')
                         | GitHub
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project
-              .projectTitle
-                | "WAREHOUSE API"
               .imageDescription
                 .image
+                  .projectTitle
+                    | "WAREHOUSE API"
                   img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/new.bmp?v=1714693587866' onclick="display()").projectImg
                 .description
                   | An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.
@@ -191,11 +191,11 @@ html(lang='en')
                         | GitHub
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project
-              .projectTitle
-                .engTitle.toggle-element.visible "VBA SCRIPT SET"
-                .polTitle.toggle-element "ZESTAW SKRYPTÓW VBA" 
               .imageDescription
                 .image
+                  .projectTitle
+                    .engTitle.toggle-element.visible "VBA SCRIPT SET"
+                    .polTitle.toggle-element "ZESTAW SKRYPTÓW VBA" 
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
                 .description
                   | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
@@ -213,11 +213,11 @@ html(lang='en')
                         | GitHub
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project(style="margin-bottom: 15px;")
-              #sql
-                .engTitle.toggle-element.visible "SQL DATABASE MANAGMENT APPLICATION"
-                .polTitle.toggle-element "APLIKACJA DO ZARZĄDZANIA BAZĄ SQL"  
               .imageDescription
                 .image
+                  #sql
+                    .engTitle.toggle-element.visible "SQL DATABASE MANAGMENT APPLICATION"
+                    .polTitle.toggle-element "APLIKACJA DO ZARZĄDZANIA BAZĄ SQL"  
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
                 .description
                   | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
