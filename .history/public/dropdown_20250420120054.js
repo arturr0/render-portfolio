@@ -12,26 +12,24 @@ document.getElementById('homeContentPojects')
     handleScroll(this);
   });
 
-  let lastScrollTop = 0;
-  function handleScroll(el) {
-    const topDiv = document.getElementById('menu');
-    const content = document.getElementById('content');
-    const firstProject = document.querySelector('.project');
-    const currentScroll = el.scrollTop;
-  
-    if (currentScroll > lastScrollTop) {
-      topDiv.classList.add('hidden');
-      content.classList.add('hidden2');
-      if (firstProject) firstProject.classList.add('with-offset');
-    } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
-      topDiv.classList.remove('hidden');
-      content.classList.remove('hidden2');
-      if (firstProject) firstProject.classList.remove('with-offset');
-    }
-  
-    lastScrollTop = Math.max(0, currentScroll);
+let lastScrollTop = 0;
+function handleScroll(el) {
+  const topDiv = document.getElementById('menu');
+  const currentScroll = el.scrollTop;
+  const firstProject = document.querySelector('.project'); // gets the first element
+
+  if (currentScroll > lastScrollTop) {
+    topDiv.classList.add('hidden'); // scroll down
+    document.getElementById('content').classList.add('hidden2');
+    if (firstProject) firstProject.style.marginTop = '56px';
+  } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
+    topDiv.classList.remove('hidden'); // scroll up or top
+    document.getElementById('content').classList.remove('hidden2');
+    if (firstProject) firstProject.style.marginTop = '0px';
   }
-  
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
 
 function changeAllTexts() {
   const paragraphs = document.querySelectorAll('.description');

@@ -12,26 +12,19 @@ document.getElementById('homeContentPojects')
     handleScroll(this);
   });
 
-  let lastScrollTop = 0;
+let lastScrollTop = 0;
   function handleScroll(el) {
     const topDiv = document.getElementById('menu');
-    const content = document.getElementById('content');
-    const firstProject = document.querySelector('.project');
     const currentScroll = el.scrollTop;
-  
-    if (currentScroll > lastScrollTop) {
-      topDiv.classList.add('hidden');
-      content.classList.add('hidden2');
-      if (firstProject) firstProject.classList.add('with-offset');
-    } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
-      topDiv.classList.remove('hidden');
-      content.classList.remove('hidden2');
-      if (firstProject) firstProject.classList.remove('with-offset');
+
+    if (currentScroll > lastScrollTop + 10) {
+      topDiv.classList.add('hidden'); // scroll down
+    } else if (currentScroll < lastScrollTop - 10 || currentScroll <= 0) {
+      topDiv.classList.remove('hidden'); // scroll up or top
     }
-  
-    lastScrollTop = Math.max(0, currentScroll);
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
-  
 
 function changeAllTexts() {
   const paragraphs = document.querySelectorAll('.description');

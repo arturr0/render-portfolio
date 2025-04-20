@@ -706,22 +706,13 @@ border-bottom: solid 2px #84ff0f;
 }
 #content {
   
-  transition: margin-top 0.3s ease;
+  transition: transform 0.4s ease;
   
   
 }
 #content.hidden2 {
   margin-top: -56px; /* collapse space */
 }
-.project {
-  transition: margin-top 0.3s ease;
-}
-
-/* Applied only when menu is hidden */
-.project.with-offset {
-  margin-top: 112px;
-}
-
 .filler {
   flex-grow: 1;
 }
