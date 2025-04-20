@@ -7,7 +7,7 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-document.getElementById('textEng')
+document.getElementById('homeContentPojects')
   .addEventListener('scroll', function () {
     handleScroll(this);
   });

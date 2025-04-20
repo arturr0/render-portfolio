@@ -429,14 +429,15 @@ hr {
     align-items: center;
   }
   #homeContentPojects {
-    /* overflow: auto; Enable both vertical and horizontal scrolling if needed */
-    height: 100vh; /* Take up 100% of the parent's height */
+    overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
+    height: 100%; /* Take up 100% of the parent's height */
     width: 100%;
     /* background-color: rgba(176,196,222, 0.8); */
     border-radius: 10px;
     font-weight: bold;
     position: relative;
-    
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
   }
   #content #menu #aboutMe {
     margin-left: 0;
@@ -874,7 +875,7 @@ border-bottom: solid 2px #84ff0f;
   margin-left: 10px;
   margin-right: 10px;
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 /* .imageDescription {
   display: flex;
@@ -1076,10 +1077,8 @@ border-bottom: solid 2px #84ff0f;
 }
 #textEng {
   text-align: justify;
-  /* overflow-x: hidden; */
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  height: 100vh;
+  overflow-x: hidden;
+  
 }
 .border:not(.not):hover {
   background-color: rgba(132, 255, 15, 0.5);

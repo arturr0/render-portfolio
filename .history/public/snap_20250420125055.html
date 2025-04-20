@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          scroll-behavior: smooth;
+        }
+      
+        .container {
+          height: 100vh;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+        }
+      
+        div {
+          height: 100vh;
+          scroll-snap-align: start;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+        }
+      
+        div:nth-child(odd) {
+          background: red;
+        }
+      
+        div:nth-child(even) {
+          background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Section 1</div>
+        <div>Section 2</div>
+        <div>Section 3</div>
+      </div>
+</body>
+</html>
+
+
+

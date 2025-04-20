@@ -7,33 +7,63 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-document.getElementById('textEng')
+document.getElementById('homeContentPojects')
   .addEventListener('scroll', function () {
     handleScroll(this);
   });
 
   let lastScrollTop = 0;
-  function handleScroll(el) {
-    const topDiv = document.getElementById('menu');
-    const content = document.getElementById('content');
-    const main = document.getElementById('main');
-    const firstProject = document.querySelector('.project');
-    const currentScroll = el.scrollTop;
-  
-    if (currentScroll > lastScrollTop) {
+let scrollTimeout = null;
+const SCROLL_THRESHOLD = 10;
+
+function handleScroll(el) {
+  const topDiv = document.getElementById('menu');
+  const content = document.getElementById('content');
+  const firstProject = document.querySelector('.project');
+  const currentScroll = el.scrollTop;
+
+  const scrollingDown = currentScroll > lastScrollTop + SCROLL_THRESHOLD;
+  const scrollingUp = currentScroll < lastScrollTop - SCROLL_THRESHOLD;
+
+  const firstProjectRect = firstProject?.getBoundingClientRect();
+  const containerRect = el.getBoundingClientRect();
+
+  const isPartiallyVisible =
+    firstProjectRect.top < containerRect.bottom &&
+    firstProjectRect.bottom > containerRect.top;
+
+  const isMostlyVisible =
+    firstProjectRect.top >= containerRect.top &&
+    firstProjectRect.bottom <= containerRect.bottom;
+
+  if (scrollingDown && currentScroll <= SCROLL_THRESHOLD) {
+    // User just started scrolling from top: hide header and scroll to project
+    topDiv.classList.add('hidden');
+    content.classList.add('hidden2');
+    firstProject?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if (scrollingUp || scrollingDown) {
+    // While scrolling, check if the first project is partially visible
+    if (!isMostlyVisible && isPartiallyVisible) {
+      // Snap to fully visible and hide menu again
       topDiv.classList.add('hidden');
       content.classList.add('hidden2');
-      main.style.height = "100vh";
-      if (firstProject) firstProject.classList.add('with-offset');
-    } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
+      firstProject?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // If not at the top, and fully visible, show header
       topDiv.classList.remove('hidden');
       content.classList.remove('hidden2');
-      main.style.height = "calc(100vh - ";
-      if (firstProject) firstProject.classList.remove('with-offset');
     }
-  
-    lastScrollTop = Math.max(0, currentScroll);
   }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+  // Optional: debounce for smoother behavior
+  if (scrollTimeout) clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    lastScrollTop = el.scrollTop;
+  }, 100);
+}
+
   
 
 function changeAllTexts() {
