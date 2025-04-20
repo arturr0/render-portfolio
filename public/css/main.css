@@ -991,6 +991,7 @@ hr {
   display: grid;
   justify-content: center;
   font-size: 20px;
+  text-align: center;
 }
 .longprojectTitle {
 /*   height: 50px; */
