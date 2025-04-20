@@ -1008,7 +1008,6 @@ hr {
   left: 50%;
   transform: translateX(-50%);
   background-color: #001d15;
-  z-index: 100000;
 }
 .longprojectTitle {
 /*   height: 50px; */
