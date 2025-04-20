@@ -1065,3 +1065,14 @@ hr {
   .fade-out {
     opacity: 0;
   }
+.imageDescription {
+  position: relative;
+}
+
+/* Create a spacer equal to the image height + margin */
+.imageDescription::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 10px; /* bottom margin "fake" for the float */
+}
