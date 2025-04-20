@@ -807,7 +807,7 @@ hr {
 .tables:not(#Ctables) {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+/*   justify-content: flex-start; */
   margin-top: 10px;
   max-width: 45%;
 }
@@ -1055,6 +1055,9 @@ hr {
   .svgText .devicon-socketio-original {
     font-size: 28px;
     /* padding: 7px; */
+  }
+  .main .tables {
+    justify-content: center;
   }
   }
   .description {
