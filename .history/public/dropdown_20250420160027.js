@@ -7,39 +7,34 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-const scrollContainer = document.getElementById('textEng');
-const firstProject = document.querySelector('.project');
-let lastScrollTop = 0;
-let snappedToFirst = false;
+document.getElementById('textEng')
+  .addEventListener('scroll', function () {
+    handleScroll(this);
+  });
 
-// scrollContainer.addEventListener('scroll', () => {
-//   const currentScroll = scrollContainer.scrollTop;
-
-//   // Detect downward scroll from top area (less than threshold)
-//   if (
-//     currentScroll > lastScrollTop &&         // scrolling down
-//     lastScrollTop <= 20 &&                   // from near top
-//     currentScroll >= 50 &&                   // passed threshold
-//     !snappedToFirst &&                       // not already snapped
-//     firstProject
-//   ) {
-//     const offset = firstProject.offsetTop;
-//     scrollContainer.scrollTo({
-//       top: offset,
-//       behavior: 'smooth',
-//     });
-//     snappedToFirst = true;
-//   }
-
-//   // Reset snap if user scrolls all the way back to top
-//   if (currentScroll <= 5) {
-//     snappedToFirst = false;
-//   }
-
-//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-// });
-
-
+  let lastScrollTop = 0;
+  function handleScroll(el) {
+    const topDiv = document.getElementById('menu');
+    const content = document.getElementById('content');
+    const main = document.getElementById('main');
+    const firstProject = document.querySelector('.project');
+    const currentScroll = el.scrollTop;
+  
+    if (currentScroll > lastScrollTop) {
+      topDiv.classList.add('hidden');
+      content.classList.add('hidden2');
+      main.style.height = "100vh";
+      if (firstProject) firstProject.classList.add('with-offset');
+    } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
+      topDiv.classList.remove('hidden');
+      content.classList.remove('hidden2');
+      // main.style.height = "calc(100vh - 112px)";
+      if (firstProject) firstProject.classList.remove('with-offset');
+    }
+  
+    lastScrollTop = Math.max(0, currentScroll);
+  }
+  
 
 function changeAllTexts() {
   const paragraphs = document.querySelectorAll('.description');

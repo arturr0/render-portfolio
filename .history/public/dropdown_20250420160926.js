@@ -7,38 +7,46 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-const scrollContainer = document.getElementById('textEng');
-const firstProject = document.querySelector('.project');
-let lastScrollTop = 0;
+document.getElementById('textEng')
+  .addEventListener('scroll', function () {
+    handleScroll(this);
+  });
+
+  let lastScrollTop = 0;
 let snappedToFirst = false;
 
-// scrollContainer.addEventListener('scroll', () => {
-//   const currentScroll = scrollContainer.scrollTop;
+function handleScroll(el) {
+  const topDiv = document.getElementById('menu');
+  const content = document.getElementById('content');
+  const main = document.getElementById('main');
+  const firstProject = document.querySelector('.project');
+  const currentScroll = el.scrollTop;
 
-//   // Detect downward scroll from top area (less than threshold)
-//   if (
-//     currentScroll > lastScrollTop &&         // scrolling down
-//     lastScrollTop <= 20 &&                   // from near top
-//     currentScroll >= 50 &&                   // passed threshold
-//     !snappedToFirst &&                       // not already snapped
-//     firstProject
-//   ) {
-//     const offset = firstProject.offsetTop;
-//     scrollContainer.scrollTo({
-//       top: offset,
-//       behavior: 'smooth',
-//     });
-//     snappedToFirst = true;
-//   }
+  // When scrolling down from top and not yet snapped
+  if (currentScroll > lastScrollTop && lastScrollTop <= 0 && !snappedToFirst) {
+    if (firstProject) {
+      const offsetTop = firstProject.offsetTop;
+      el.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+      snappedToFirst = true;
+    }
+  }
 
-//   // Reset snap if user scrolls all the way back to top
-//   if (currentScroll <= 5) {
-//     snappedToFirst = false;
-//   }
+  if (currentScroll > lastScrollTop) {
+    topDiv.classList.add('hidden');
+    content.classList.add('hidden2');
+    if (firstProject) firstProject.classList.add('with-offset');
+  } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
+    topDiv.classList.remove('hidden');
+    content.classList.remove('hidden2');
+    if (firstProject) firstProject.classList.remove('with-offset');
+    snappedToFirst = false; // reset when scrolled back to top
+  }
 
-//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-// });
-
+  lastScrollTop = Math.max(0, currentScroll);
+}
 
 
 function changeAllTexts() {

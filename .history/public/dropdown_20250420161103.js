@@ -12,32 +12,32 @@ const firstProject = document.querySelector('.project');
 let lastScrollTop = 0;
 let snappedToFirst = false;
 
-// scrollContainer.addEventListener('scroll', () => {
-//   const currentScroll = scrollContainer.scrollTop;
+scrollContainer.addEventListener('scroll', () => {
+  const currentScroll = scrollContainer.scrollTop;
 
-//   // Detect downward scroll from top area (less than threshold)
-//   if (
-//     currentScroll > lastScrollTop &&         // scrolling down
-//     lastScrollTop <= 20 &&                   // from near top
-//     currentScroll >= 50 &&                   // passed threshold
-//     !snappedToFirst &&                       // not already snapped
-//     firstProject
-//   ) {
-//     const offset = firstProject.offsetTop;
-//     scrollContainer.scrollTo({
-//       top: offset,
-//       behavior: 'smooth',
-//     });
-//     snappedToFirst = true;
-//   }
+  // Detect downward scroll from top area (less than threshold)
+  if (
+    currentScroll > lastScrollTop &&         // scrolling down
+    lastScrollTop <= 20 &&                   // from near top
+    currentScroll >= 50 &&                   // passed threshold
+    !snappedToFirst &&                       // not already snapped
+    firstProject
+  ) {
+    const offset = firstProject.offsetTop;
+    scrollContainer.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    });
+    snappedToFirst = true;
+  }
 
-//   // Reset snap if user scrolls all the way back to top
-//   if (currentScroll <= 5) {
-//     snappedToFirst = false;
-//   }
+  // Reset snap if user scrolls all the way back to top
+  if (currentScroll <= 5) {
+    snappedToFirst = false;
+  }
 
-//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-// });
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
 
 
 

@@ -873,9 +873,8 @@ border-bottom: solid 2px #84ff0f;
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
-  height: calc(100vh - 56px);
+  height: 100vh;
   scroll-snap-align: end;
-  justify-content: space-around;
 }
 /* .imageDescription {
   display: flex;
@@ -895,7 +894,7 @@ border-bottom: solid 2px #84ff0f;
 
   /* width: auto; */
   height: auto;
-  width: 50vw;
+  width: 800px;
   float: left;
   display: block; /* Prevents extra space below inline-block images */
   border: 2px solid #84ff0f;
@@ -1080,7 +1079,7 @@ border-bottom: solid 2px #84ff0f;
   /* overflow-x: hidden; */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
-  height: calc(100vh - 56px);
+  height: 100vh;
 }
 .border:not(.not):hover {
   background-color: rgba(132, 255, 15, 0.5);
