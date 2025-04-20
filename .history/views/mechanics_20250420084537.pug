@@ -115,9 +115,8 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='public/images/python.png' onclick="display()").projectImg
-                .description
-                  | Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.
-              .tables(style="width: 35%") 
+                .description #{projectTxt[0][0]}
+                .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs

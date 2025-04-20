@@ -98,7 +98,7 @@ html(lang='en')
         div#visits
           a#visitEng.visits.toggle-element.visible
           a#visitPol.visits.toggle-element
-        div#lang(onclick="toggleElements(); changeAllTexts();")
+        div#lang(onclick="toggleElements()")
           img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/POL.jpg?v=1699542939034')#eng.toggle-element.visible
           img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/UK.jpg?v=1699539920089')#pol.toggle-element 
         div.rightCorner
@@ -117,7 +117,7 @@ html(lang='en')
                   img(src='public/images/python.png' onclick="display()").projectImg
                 .description
                   | Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.
-              .tables(style="width: 35%") 
+                .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
@@ -204,6 +204,6 @@ html(lang='en')
         ["The program's task is to solve a differential equation of motion with a third derivative. The equation is implemented in the Simulink environment as a block diagram. The MATLAB program displays the solution of the equation in the form of plots of frequency, jerk (third derivative), acceleration (second derivative), velocity (first derivative), and displacement as functions of time.", 
         "Zadaniem programu jest rozwiązanie różniczkowego równania ruchu z trzecią pochodną. Równanie zaimplementowane jest w środowisku Simulink w postaci schematu blokowego. Rozwiązanie równania program MATLAB wyświetla w postaci wykresów częstotliwości, zrywności (trzecia pochodna), przyspieszenia (druga pochodna), prędkości (pierwsza pochodna) i drogi w funkcji czasu."],
         ["The program simulates the operation of a vehicle suspension system after driving over a curb with the front and rear wheels. The system of springs, shock absorbers, and masses is configured in the graphical Amesim environment. Program displays acceleration and vibrations acting on the passenger on a graph, enabling the analysis of the phenomenon. Application allows for the adjustment of suspension element parameters to minimize the discomfort for the passenger when driving over a curb.",
-        "Program symuluje działanie układu zawieszenia pojazdu po najeździe na krawężnik przednim i tylnym kołem. Układ sprężyn, amortyzatorów i mas ustawia się w graficznym środowisku Amesim. Wykres przyspieszeń i drgań działających na pasażera pozwala na analize zjawiska, a aplikacja umożliwia dobór parametrów elementów zawieszenia tak, aby najazd na krawężnik był jak najmniej uciążliwy dla pasażera."]
+        ""]
       ];
     script(src='public/dropdown.js')
