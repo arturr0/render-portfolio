@@ -7,10 +7,10 @@
 //       $('.submenu').css('background-color', ''); // Revert to original background color
 //     }
 //   );
-document.getElementById('textEng')
-  .addEventListener('scroll', function () {
+const projects = document.getElementById('textEng');
+projects.addEventListener('scroll', function () {
     handleScroll(this);
-  });
+});
 
   let lastScrollTop = 0;
   function handleScroll(el) {
@@ -23,12 +23,12 @@ document.getElementById('textEng')
     if (currentScroll > lastScrollTop) {
       topDiv.classList.add('hidden');
       content.classList.add('hidden2');
-      main.style.height = "100vh";
+      // main.style.height = "100vh";
       if (firstProject) firstProject.classList.add('with-offset');
     } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
       topDiv.classList.remove('hidden');
       content.classList.remove('hidden2');
-      main.style.height = "calc(100vh - 112px)";
+      // main.style.height = "calc(100vh - 112px)";
       if (firstProject) firstProject.classList.remove('with-offset');
     }
   

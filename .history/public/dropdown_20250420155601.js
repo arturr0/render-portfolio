@@ -28,7 +28,7 @@ document.getElementById('textEng')
     } else if (currentScroll < lastScrollTop || currentScroll <= 0) {
       topDiv.classList.remove('hidden');
       content.classList.remove('hidden2');
-      main.style.height = "calc(100vh - 112px)";
+      main.style.height = "calc(100vh - ";
       if (firstProject) firstProject.classList.remove('with-offset');
     }
   
