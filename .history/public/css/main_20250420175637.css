@@ -213,7 +213,7 @@ hr {
     width: 90px;
     
   }
-  .menu #lang {
+  #menu #lang {
   position: relative;
   width: 45px;
   padding: 0;
@@ -226,22 +226,22 @@ hr {
     overflow-x: hidden;
 /*     font-size: 30px; */
   }
-  .menu {
+  #menu {
     display: flex;
     justify-content: space-evenly;
   }
   
-  .menu .visits {
+  #menu .visits {
     font-size: 20px; /* Ensure this value is correctly set */
     white-space: normal;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
   }
-  .menu #visits {
+  #menu #visits {
     font-size: 20px;
   }
-  .menu #aboutMe {
+  #menu #aboutMe {
     margin: 0;
     padding: 0;
     border: none;
@@ -262,7 +262,7 @@ hr {
   text-align: center;
   display: grid;
 }
-  .menu #visitEng, #visitPol {
+  #menu #visitEng, #visitPol {
     position: absolute;
     font-size: 12px;
     /* width: 50px; */
@@ -271,7 +271,7 @@ hr {
     align-items: center;
     /* margin-left: 10px; */
 }
-  .menu #visits {
+  #menu #visits {
     position: relative;
     height: 54px;
     width: 70px;
@@ -283,13 +283,13 @@ hr {
   overflow-x: hidden;
   
 }
-  .menu #aboutMe {
+  #menu #aboutMe {
     margin: 0;
     padding: 0;
     border: none;
   }
   /* Ensure no gaps or unexpected padding/margins */
-  .menu {
+  #menu {
     gap: 0;
     padding: 0;
     margin: 0;
@@ -342,7 +342,7 @@ hr {
   
 }
 @media (max-device-width: 1200px) {
-  .menu .homeLink .services,
+  #menu .homeLink .services,
   .about #pageviews-count {
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -372,24 +372,24 @@ hr {
        height: auto; /* Allow the height to adjust based on the content */
 /*        min-height: 20px; /* Ensure it has a minimum height */ 
    } */
-  .menu .dropdown .dropdown-content {
+  #menu .dropdown .dropdown-content {
     max-height: 1000px;
     overflow: hidden;
     transition: max-height 0.7s;
     z-index: 10;
   }
-  .menu #visits {
+  #menu #visits {
     position: relative;
     height: 54px;
     width: 70px;
     margin-left: auto;
     /* background-color: rgb(128, 128, 128, 0.9); */
 }
-  .menu .dropdown .hidden {
+  #menu .dropdown .hidden {
     max-height: 0;
     overflow: hidden;
   }
-  .menu .homeLink .services,
+  #menu .homeLink .services,
   .visits #pageviews-count {
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -403,7 +403,7 @@ hr {
 .hidden {
   display: none;
 }
-  .menu .dropdown .dropdown-content.services {
+  #menu .dropdown .dropdown-content.services {
     max-height: 1000px;
     overflow: hidden;
     transition: max-height 0.7s;
@@ -411,7 +411,7 @@ hr {
     z-index: 10;
   }
 
-  .menu .dropdown .hidden {
+  #menu .dropdown .hidden {
     max-height: 0;
     overflow: hidden;
   }
@@ -438,24 +438,24 @@ hr {
     position: relative;
     
   }
-  .content .menu #aboutMe {
+  #content #menu #aboutMe {
     margin-left: 0;
   }
-  .menu #pol, #eng {
+  #menu #pol, #eng {
     width: 45px;
     height: 30px;
 /*     object-fit: contain; */
 /*     margin-left: 20px; */
   }
-/*   .content .menu #lang {
+/*   #content #menu #lang {
     margin-right: 3px;
     padding: 0;
   } */
   
-/*   .menu #pol, #eng {
+/*   #menu #pol, #eng {
     margin-right: 10px;
   } */
-  .menu .visits {
+  #menu .visits {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -469,7 +469,7 @@ hr {
     width: 20px;
 }
   
-  .menu #visits {
+  #menu #visits {
     position: relative;
     height: 54px;
 /*     width: 600px; */
@@ -479,10 +479,10 @@ hr {
 border-bottom: solid 2px #84ff0f;
   box-sizing: border-box;
 }
-  .menu #visits::first-word {
+  #menu #visits::first-word {
     display: block;
 }
-.menu #visits::last-word {
+#menu #visits::last-word {
     display:block
   } 
   #main .border {
@@ -510,10 +510,10 @@ border-bottom: solid 2px #84ff0f;
 }
 
 @media only screen and (min-device-width: 900px) {
-  /* .menu ul li a:hover {
+  /* #menu ul li a:hover {
     background-color: #555;
   } */
-  .menu div {
+  #menu div {
   margin: 0;
   padding: 0;
 }
@@ -525,13 +525,13 @@ border-bottom: solid 2px #84ff0f;
     font-size: 20px;
   } */
   
-  .menu .dropdown:hover .dropdown-content,
+  #menu .dropdown:hover .dropdown-content,
   .dropdown-content:hover {
     max-height: 1000px; /* Adjust this value based on your dropdown's height */
      transition: max-height 0.7s;
     z-index: 10;
   }
-/*   .menu .dropdown-content a:hover {
+/*   #menu .dropdown-content a:hover {
     background-color: #555;
   } */
 }
@@ -690,7 +690,7 @@ border-bottom: solid 2px #84ff0f;
 .services {
   user-select: none;
 }
-.menu {
+#menu {
   display: flex;
   flex-direction: row;
   text-decoration: none;
@@ -705,16 +705,16 @@ border-bottom: solid 2px #84ff0f;
   z-index: 1;
   
 }
-.menu.hidden {
+#menu.hidden {
   margin-top: -56px; /* collapse space */
 }
-.content {
+#content {
   
   transition: margin-top 0.3s ease;
   
   
 }
-.content.hidden2 {
+#content.hidden2 {
   margin-top: -56px; /* collapse space */
 }
 .project {
@@ -837,7 +837,7 @@ border-bottom: solid 2px #84ff0f;
   flex-direction: row;
 /*   justify-content: flex-start; */
 /*   margin-top: 10px; */
-  /* max-width: 45%; */
+  max-width: 45%;
   margin-bottom: 7px;
 }
 #Ctables {
@@ -1001,11 +1001,11 @@ border-bottom: solid 2px #84ff0f;
   
 } */
 
-.menu div {
+#menu div {
   margin: 0;
   padding: 0;
 }
-.menu div {
+#menu div {
   gap: 0;
 }
 .submenu1 {
@@ -1085,7 +1085,7 @@ border-bottom: solid 2px #84ff0f;
 .border:not(.not):hover {
   background-color: rgba(132, 255, 15, 0.5);
 }
-.menu .dropdown:hover .dropdown-content {
+#menu .dropdown:hover .dropdown-content {
   max-height: 300px; /* Adjust based on your dropdown size */
 /*   overflow: auto; /* Ensure scroll if content exceeds max-height */ */ */
   transition: max-height 0.7s ease;
@@ -1100,7 +1100,7 @@ border-bottom: solid 2px #84ff0f;
     font-size: 28px;
     /* padding: 7px; */
   }
-  .main .tables {
+  #main .tables {
     justify-content: center;
   }
   }

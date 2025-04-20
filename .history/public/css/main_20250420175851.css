@@ -837,7 +837,7 @@ border-bottom: solid 2px #84ff0f;
   flex-direction: row;
 /*   justify-content: flex-start; */
 /*   margin-top: 10px; */
-  /* max-width: 45%; */
+  max-width: 45%;
   margin-bottom: 7px;
 }
 #Ctables {
@@ -1100,7 +1100,7 @@ border-bottom: solid 2px #84ff0f;
     font-size: 28px;
     /* padding: 7px; */
   }
-  .main .tables {
+  #main .tables {
     justify-content: center;
   }
   }

@@ -78,7 +78,7 @@ html(lang='en')
     span.tooltip-textPol
     img.code(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039')
     .content
-      .menu
+      #menu
         //- div.submenu1
         div.aboutLeft
         a#aboutMe(href='/' style="border-bottom: solid #84ff0f 2px;")
@@ -218,7 +218,7 @@ html(lang='en')
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
                 .description
                   | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
-              .tables
+              .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
