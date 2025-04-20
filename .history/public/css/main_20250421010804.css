@@ -810,7 +810,7 @@ hr {
 /*   justify-content: flex-start; */
 /*   margin-top: 10px; */
   max-width: 45%;
-  /* margin-bottom: 7px; */
+  margin-bottom: 7px;
 }
 #Ctables {
   display: flex;
@@ -846,8 +846,6 @@ hr {
   margin-left: 10px;
   margin-right: 10px;
   height: auto;
-  scroll-snap-align: center;
-  height: calc(100vh - 60px);
 }
 /* .imageDescription {
   display: flex;
@@ -1078,7 +1076,7 @@ hr {
   .description {
     transition: opacity 0.3s ease;
     opacity: 1;
-    font-size: 3vh;
+    font-size: 1.4rem;
   }
   .fade-out {
     opacity: 0;
@@ -1087,3 +1085,10 @@ hr {
   position: relative;
 }
 
+/* Create a spacer equal to the image height + margin */
+.imageDescription::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 10px; /* bottom margin "fake" for the float */
+}
