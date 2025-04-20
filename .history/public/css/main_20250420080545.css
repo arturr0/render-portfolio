@@ -323,7 +323,7 @@ hr {
   .main .Eng {
   position: relative;
   
-  min-width: 90px;
+  min-width: 80px;
   white-space: nowrap;
   min-height: 20px;
 
@@ -331,7 +331,7 @@ hr {
 .main .Pol {
   position: relative;
   
-  min-width: 80px;
+  min-width: 46px;
   white-space: nowrap;
   min-height: 20px;
 
@@ -835,7 +835,7 @@ hr {
   align-items: center;
   margin-right: 15px;
   width: auto;
-  font-size: 1.2rem;
+  font-size: 17px;
 }
 .downloadContainer {
   color: white;
@@ -986,24 +986,14 @@ hr {
 }
 
 .projectTitle {
-  /* height: 20px; */
+/*   height: 20px; */
   padding: 10px;
   font-weight: bold;
-  display: grid;
+/*   display: grid; */
   justify-content: center;
   font-size: 20px;
-  display: inline-block;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  padding: 5px;
-  border: solid 3px #84ff0f;
-  box-shadow: 0 0 5px #84ff0f;
-  margin: 10px auto 10px auto;
-  font-size: 1.4rem;
+  text-align: center;
+  width: 100%;
 }
 .longprojectTitle {
 /*   height: 50px; */

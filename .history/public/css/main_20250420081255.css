@@ -323,7 +323,7 @@ hr {
   .main .Eng {
   position: relative;
   
-  min-width: 90px;
+  min-width: 80px;
   white-space: nowrap;
   min-height: 20px;
 
@@ -331,7 +331,7 @@ hr {
 .main .Pol {
   position: relative;
   
-  min-width: 80px;
+  min-width: 46px;
   white-space: nowrap;
   min-height: 20px;
 

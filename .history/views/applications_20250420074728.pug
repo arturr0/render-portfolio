@@ -110,8 +110,8 @@ html(lang='en')
         #homeContentPojects
           #textEng(style="width: 100%;")
             div.project
-              .projectTitle
-                | "CIPHER CONNECT"
+            .projectTitle
+              | "CIPHER CONNECT"
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
@@ -192,7 +192,8 @@ html(lang='en')
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project
               .projectTitle
-                | "VBA SCRIPT SET"
+                .engTitle.toggle-element.visible "VBA SCRIPT SET"
+                .polTitle.toggle-element "ZESTAW SKRYPTÓW VBA" 
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
@@ -212,7 +213,9 @@ html(lang='en')
                         | GitHub
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
             div.project(style="margin-bottom: 15px;")
-              .projectTitle "SQL DATABASE MANAGER"
+              #sql
+                .engTitle.toggle-element.visible "SQL DATABASE MANAGMENT APPLICATION"
+                .polTitle.toggle-element "APLIKACJA DO ZARZĄDZANIA BAZĄ SQL"  
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
