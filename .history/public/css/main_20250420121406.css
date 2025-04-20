@@ -1,6 +1,3 @@
-html {
-  overflow: hidden;
-}
 ::-webkit-scrollbar {
   width: 10px;
   
@@ -112,11 +109,11 @@ hr {
 
 @media only screen and (max-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
    
-  #main #displayed-image {
+  .main #displayed-image {
     height: 200px;
     width: auto;
   }
-  #main #displayed-image {
+  .main #displayed-image {
     height: 250px;
     width: auto;
   }
@@ -128,37 +125,37 @@ hr {
   width: 0px;
   
 }
-  #main .Pol {
+  .main .Pol {
     width: 75px;
     
   }
-  #main .Eng {
+  .main .Eng {
     width: 90px;
     
   }
-  #main .description {
+  .main .description {
 /*     overflow: auto; */
     height: auto;
   }
-  #main .projectImg {
+  .main .projectImg {
     width: auto;
     height: 140px;
   }
-  #main .tables {
+  .main .tables {
     width: 60%;
   }
   
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
-  #main .projectImg {
+  .main .projectImg {
         height: 60px; /* Set a maximum height of 100 viewport height units */
         width: auto;
     }
-  #main #displayed-image {
+  .main #displayed-image {
     height: 200px;
     width: auto;
   }
-  #main .svgText {
+  .main .svgText {
     display: flex;
     border: solid 3px #84ff0f;
     box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
@@ -171,7 +168,7 @@ hr {
     font-size: 30px;
     padding: 7px;
   }
-  #main .first {
+  .main .first {
     margin-left: auto;
     margin-right: auto;
   }
@@ -179,13 +176,13 @@ hr {
     margin-right: auto;
     margin-left: auto;
   }
-  #main .mainContent #homeContent {
+  .main .mainContent #homeContent {
     width: 120%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #main .tools {
+  .main .tools {
    display: inline-flex;
 /*     margin-bottom: 5px; */
     flex-direction: column;
@@ -194,7 +191,7 @@ hr {
     width: 100%;
     
   }
-  #main .svgText {
+  .main .svgText {
     margin-bottom: 10px;
     border: solid 2px #84ff0f;
     box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
@@ -205,11 +202,11 @@ hr {
   width: 0px;
   
 }
-  #main .Pol {
+  .main .Pol {
     width: 75px;
     
   }
-  #main .Eng {
+  .main .Eng {
     width: 90px;
     
   }
@@ -221,7 +218,7 @@ hr {
   /* height: 54px; */
   
 }
-  #main #textPol {
+  .main #textPol {
     text-align: left !important;
     overflow-x: hidden;
 /*     font-size: 30px; */
@@ -246,7 +243,7 @@ hr {
     padding: 0;
     border: none;
   }
-  #main .longerprojectTitle {
+  .main .longerprojectTitle {
   height: 90px;
   padding: 10px;
   font-weight: bold;
@@ -255,7 +252,7 @@ hr {
   align-items: center;
   justify-content: center;
 }
-  #main .longprojectTitle {
+  .main .longprojectTitle {
   height: 80px;
   padding: 10px;
   font-weight: bold;
@@ -278,7 +275,7 @@ hr {
     margin-left: auto;
     /* background-color: rgb(128, 128, 128, 0.9); */
 }
-  #main #textEng {
+  .main #textEng {
   text-align: left !important; 
   overflow-x: hidden;
   
@@ -295,12 +292,12 @@ hr {
     margin: 0;
   }
 }
-  /* #main .description {
+  /* .main .description {
     overflow: auto;
     height: auto;
   } */
   
-  #main .tables {
+  .main .tables {
     font-size: 13px;
     min-width: 100%;
     overflow: auto;
@@ -314,16 +311,16 @@ hr {
   min-height: 20px; /* Optional: Ensures a minimum height, but allows it to grow */
 /*   height: auto; /* Let the height be determined by the content */ */
 /* } */
-/*   #main .engTitle, .polTitle {
+/*   .main .engTitle, .polTitle {
     margin-right: 10px;
     text-align: left;
   } */
-  #main .border {
+  .main .border {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #main .Eng {
+  .main .Eng {
   position: relative;
   
   min-width: 90px;
@@ -331,7 +328,7 @@ hr {
   min-height: 20px;
 
 }
-#main .Pol {
+.main .Pol {
   position: relative;
   
   min-width: 80px;
@@ -415,7 +412,7 @@ hr {
     max-height: 0;
     overflow: hidden;
   }
-  #main .mainContent #homeContent {
+  .main .mainContent #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
   width: 100%;
@@ -484,7 +481,7 @@ border-bottom: solid 2px #84ff0f;
 #menu #visits::last-word {
     display:block
   } 
-  #main .border {
+  .main .border {
   background: transparent;
   height: 20px;
   border-bottom-left-radius: 20px;
@@ -499,11 +496,11 @@ border-bottom: solid 2px #84ff0f;
   align-items: center;
   background: #001d15;
 }
-  #main .tech, .linkEng, .gitEng {
+  .main .tech, .linkEng, .gitEng {
     margin-right: 5px;
   }
   
-  /* #main .description {
+  /* .main .description {
     width: 100%;
   } */
 }
@@ -517,7 +514,7 @@ border-bottom: solid 2px #84ff0f;
   padding: 0;
 }
   
-/*   #main .projectTitle {
+/*   .main .projectTitle {
     height: 20px;
     padding: 10px;
     font-weight: bold;
@@ -794,7 +791,7 @@ border-bottom: solid 2px #84ff0f;
   object-fit: cover;
 }
 
-#main {
+.main {
   height: calc(100vh - 60px);
 }
 .mainContent {
@@ -1095,7 +1092,7 @@ border-bottom: solid 2px #84ff0f;
     font-size: 28px;
     /* padding: 7px; */
   }
-  #main .tables {
+  .main .tables {
     justify-content: center;
   }
   }
