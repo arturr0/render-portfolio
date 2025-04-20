@@ -134,7 +134,7 @@ hr {
     
   }
   .main .description {
-    overflow: auto;
+/*     overflow: auto; */
     height: auto;
   }
   .main .projectImg {
