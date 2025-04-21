@@ -114,7 +114,7 @@ hr {
   height: calc(100vh - 56px);
 }
 }
-@media only screen and (min-width: 1500px) and (orientation: landscape) and (pointer: coarse) {
+@media only screen and (min-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
 
   #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
