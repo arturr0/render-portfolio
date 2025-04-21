@@ -152,17 +152,21 @@ hr {
   
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) and (orientation: portrait) {
   #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
     overflow: auto;
     
   }
+  
+}
+@media only screen and (min-width: 1200px) and (orientation: landscape) {
   #homeContentPojects #textEng {
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: y mandatory;
     overflow: auto;
     
   }
+  
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
