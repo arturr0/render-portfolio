@@ -107,7 +107,6 @@ hr {
     font-style: normal;
 }
 
-
 @media only screen and (max-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
    
   .main #displayed-image {
@@ -122,11 +121,11 @@ hr {
     font-size: 20px;
     /* padding: 7px; */
   }
-  /* #homeContentPojects #textEng {
+  #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
     overflow: auto;
     height: calc(100vh - 56px);
-  } */
+  }
   ::-webkit-scrollbar {
   width: 0px;
   
@@ -846,19 +845,10 @@ hr {
 .downloadContainer {
   color: white;
 }
-@media only screen and (min-width: 400px) and (orientation: portrait) {
-#homeContentPojects #textEng {
+#textEng {
   scroll-snap-type: y mandatory;
   overflow: auto;
   height: 100%;
-}
-}
-@media only screen and (min-width: 900px) and (orientation: landscape) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    height: 100%;
-  }
 }
 .project {
   display: flex;
