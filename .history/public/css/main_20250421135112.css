@@ -121,11 +121,6 @@ hr {
     font-size: 20px;
     /* padding: 7px; */
   }
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    height: calc(100vh - 56px);
-  }
   ::-webkit-scrollbar {
   width: 0px;
   
@@ -848,7 +843,7 @@ hr {
 #textEng {
   scroll-snap-type: y mandatory;
   overflow: auto;
-  height: 100%;
+  height: calc(100vh - 56px);
 }
 .project {
   display: flex;
