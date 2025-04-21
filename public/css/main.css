@@ -152,18 +152,18 @@ hr {
   
 }
 
-#homeContentPojects #textEng {
-  scroll-snap-type: y mandatory;
-  overflow: auto;
-}
-
-@media only screen and (max-width: 699px),
-       only screen and (max-width: 1199px) and (orientation: landscape) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: none;
+@media only screen and (min-width: 700px) and (orientation: portrait) {
+  body {
+    height: 10px;
   }
+  
 }
-
+@media only screen and (min-width: 1200px) and (orientation: landscape) {
+  body {
+    height: 10px;
+  }
+  
+}
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
         height: auto; /* Set a maximum height of 100 viewport height units */
