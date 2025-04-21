@@ -90,11 +90,11 @@ hr {
         .icon-microchip {
             width: auto;
 /*             height: 20px; */
-            margin-top: 3px;
-            margin-bottom: auto; 
+/*             margin-top: auto;
+            margin-bottom: auto; */
             padding: 5px;
             font-size: 3vh;
-            /* margin: auto; */
+            margin: auto;
             
 
         }
@@ -148,8 +148,8 @@ hr {
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
-        height: auto; /* Set a maximum height of 100 viewport height units */
-        width: 50vw;
+        height: 60px; /* Set a maximum height of 100 viewport height units */
+        width: auto;
     }
   .main #displayed-image {
     height: 200px;
@@ -894,7 +894,10 @@ hr {
   user-select: text;
   font-size: 20px;
 }
-
+.description {
+  /* display: grid; */
+  margin-left: 10px;
+} 
 .borderContent {
   margin-right: 4px;
 }
@@ -1080,7 +1083,7 @@ hr {
   .description {
     transition: opacity 0.3s ease;
     opacity: 1;
-    font-size: clamp(1rem, 2vh, 1.1rem);;
+    font-size: 3vh;
   }
   .fade-out {
     opacity: 0;

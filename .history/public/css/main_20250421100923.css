@@ -148,8 +148,8 @@ hr {
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
-        height: auto; /* Set a maximum height of 100 viewport height units */
-        width: 50vw;
+        height: 60px; /* Set a maximum height of 100 viewport height units */
+        width: auto;
     }
   .main #displayed-image {
     height: 200px;
