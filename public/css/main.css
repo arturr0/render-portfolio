@@ -138,8 +138,8 @@ hr {
     height: auto;
   }
   .main .projectImg {
-    width: auto;
-    height: 140px;
+    width: 30vw;
+    height: auto;
   }
   .main .tables {
     width: 60%;
