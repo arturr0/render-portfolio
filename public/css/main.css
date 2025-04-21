@@ -152,7 +152,7 @@ hr {
   
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   #homeContentPojects #textEng {
     scroll-snap-type: none;
     
