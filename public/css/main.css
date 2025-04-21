@@ -1,9 +1,10 @@
-@media only screen and (min-width: 700px) and (min-height: 700px) {
+@media only screen and (min-width: 700px) {
   #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
     overflow: auto;
   }
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;
