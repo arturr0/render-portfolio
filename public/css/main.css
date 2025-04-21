@@ -151,13 +151,8 @@ hr {
   }
   
 }
-@media only screen and (max-height: 1000px) and (orientation: portrait) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: none;
-    
-  }
-}
-@media only screen and (max-width: 1000px) and (orientation: lanscape) {
+
+@media only screen and (max-width: 600px) {
   #homeContentPojects #textEng {
     scroll-snap-type: none;
     
