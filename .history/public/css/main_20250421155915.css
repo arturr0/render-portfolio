@@ -1088,10 +1088,6 @@ hr {
     opacity: 1;
     font-size: clamp(1rem, 4vh, 2rem);;
   }
-  .image .projectImg {
-    width: 35vw;
-    height: auto;
-  }
   }
   
   .fade-out {

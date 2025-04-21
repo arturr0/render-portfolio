@@ -879,7 +879,7 @@ hr {
 
   /* width: auto; */
   height: auto;
-  /* width: 50vw; */
+  width: 50vw;
   float: left;
   display: block; /* Prevents extra space below inline-block images */
   border: 2px solid #84ff0f;
@@ -1087,10 +1087,6 @@ hr {
     transition: opacity 0.3s ease;
     opacity: 1;
     font-size: clamp(1rem, 4vh, 2rem);;
-  }
-  .image .projectImg {
-    width: 35vw;
-    height: auto;
   }
   }
   
