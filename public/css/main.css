@@ -846,18 +846,17 @@ hr {
 .downloadContainer {
   color: white;
 }
-@media only screen and (min-width: 200px) and (orientation: portrait)  {
 #homeContentPojects #textEng {
   scroll-snap-type: y mandatory;
   overflow: auto;
   height: 100%;
 }
-}
-@media only screen and (min-width: 200px) and (orientation: landscape) {
+
+/* Disable on smaller devices */
+@media only screen and (max-width: 699px), 
+       only screen and (max-height: 1499px) {
   #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    height: 100%;
+    scroll-snap-type: none;
   }
 }
 .project {
