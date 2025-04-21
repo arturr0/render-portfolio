@@ -842,7 +842,7 @@ hr {
 }
 #textEng {
   scroll-snap-type: y mandatory;
-  height: 100%;
+  height: calc(100vh - 60px);
 }
 .project {
   display: flex;

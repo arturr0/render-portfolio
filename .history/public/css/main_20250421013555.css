@@ -842,7 +842,6 @@ hr {
 }
 #textEng {
   scroll-snap-type: y mandatory;
-  height: 100%;
 }
 .project {
   display: flex;

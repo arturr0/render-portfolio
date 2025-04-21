@@ -842,7 +842,7 @@ hr {
 }
 #textEng {
   scroll-snap-type: y mandatory;
-  height: 100%;
+  height: calc(100vh - 50px);
 }
 .project {
   display: flex;
@@ -851,7 +851,7 @@ hr {
   margin-right: 10px;
   height: auto;
   scroll-snap-align: start;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 56px);
   justify-content: space-evenly;
 }
 /* .imageDescription {
