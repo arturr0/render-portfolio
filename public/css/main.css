@@ -1,16 +1,3 @@
-@media only screen and (min-width: 700px) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-  }
-}
-@media only screen and (min-height: 1000px) and (orientation: portrait) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 10px;
   
@@ -119,7 +106,20 @@ hr {
     font-weight: normal;
     font-style: normal;
 }
-
+@media only screen and (min-width: 1200px) and (orientation: landscape) {
+#homeContentPojects #textEng {
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: calc(100vh - 56px);
+}
+}
+@media only screen and (min-height: 1500px) and (orientation: portrait) {
+  #homeContentPojects #textEng {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    height: calc(100vh - 56px);
+  }
+}
 @media only screen and (max-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
    
   .main #displayed-image {
@@ -164,8 +164,6 @@ hr {
   }
   
 }
-
-
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
         height: auto; /* Set a maximum height of 100 viewport height units */
@@ -1115,4 +1113,3 @@ hr {
 .imageDescription {
   position: relative;
 }
-
