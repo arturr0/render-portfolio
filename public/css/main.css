@@ -106,20 +106,22 @@ hr {
     font-weight: normal;
     font-style: normal;
 }
-@media only screen and (min-width: 1200px) and (orientation: landscape) {
+@media only screen and (min-height: 1500px) and (orientation: portrait) and (pointer: coarse) {
+
 #homeContentPojects #textEng {
   scroll-snap-type: y mandatory;
   overflow: auto;
   height: calc(100vh - 56px);
 }
 }
-@media only screen and (min-height: 1500px) and (orientation: portrait) {
+@media only screen and (min-width: 1500px) and (orientation: landscape) and (pointer: coarse) {
+
   #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
     overflow: auto;
     height: calc(100vh - 56px);
   }
-}
+  }
 @media only screen and (max-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
    
   .main #displayed-image {
@@ -134,11 +136,11 @@ hr {
     font-size: 20px;
     /* padding: 7px; */
   }
-  #homeContentPojects #textEng {
-    /* scroll-snap-type: y mandatory; */
+  /* #homeContentPojects #textEng {
+    scroll-snap-type: y mandatory;
     overflow: auto;
     height: calc(100vh - 56px);
-  }
+  } */
   ::-webkit-scrollbar {
   width: 0px;
   
@@ -858,11 +860,11 @@ hr {
 .downloadContainer {
   color: white;
 }
-#textEng {
-  /* scroll-snap-type: y mandatory; */
+/* #textEng {
+  scroll-snap-type: y mandatory;
   overflow: auto;
   height: 100%;
-}
+} */
 .project {
   display: flex;
   flex-direction: column;
