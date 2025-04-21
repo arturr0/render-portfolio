@@ -1,10 +1,4 @@
-@media only screen and (min-width: 700px) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-  }
-}
-@media only screen and (min-width: 600px) and (orientation: portrait)  {
+@media only screen and (min-width: 600px)  {
   #homeContentPojects #textEng {
     scroll-snap-type: y mandatory;
     overflow: auto;
