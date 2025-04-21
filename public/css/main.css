@@ -848,7 +848,7 @@ hr {
 }
 @media only screen and (min-height: 200px) {
 #homeContentPojects #textEng {
-  scroll-snap-type: y mandatory;
+/*   scroll-snap-type: y mandatory; */
   overflow: auto;
   height: 100%;
 }
