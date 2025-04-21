@@ -846,7 +846,7 @@ hr {
 .downloadContainer {
   color: white;
 }
-@media only screen and (max-width: 500px) and (orientation: portrait) {
+@media only screen and (min-height: 250px) and (orientation: portrait) {
 #homeContentPojects #textEng {
   scroll-snap-type: y mandatory;
   overflow: auto;
