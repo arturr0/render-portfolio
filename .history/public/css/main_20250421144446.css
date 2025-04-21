@@ -1084,7 +1084,7 @@ hr {
     
   }
   }
-  .imageDescription .description {
+  .description {
     transition: opacity 0.3s ease;
     opacity: 1;
     font-size: clamp(1rem, 4vh, 2rem);;
