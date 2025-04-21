@@ -152,15 +152,19 @@ hr {
   
 }
 
-@media only screen and (min-width: 700px) and (orientation: portrait) {
-  body {
-    height: 10px;
+@media only screen and (min-device-width: 700px) and (orientation: portrait) {
+  #homeContentPojects #textEng {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    
   }
   
 }
-@media only screen and (min-width: 1200px) and (orientation: landscape) {
-  body {
-    height: 10px;
+@media only screen and (min-device-width: 1200px) and (orientation: landscape) {
+  #homeContentPojects #textEng {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    
   }
   
 }
