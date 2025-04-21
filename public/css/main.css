@@ -122,7 +122,7 @@ hr {
     /* padding: 7px; */
   }
   #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
     overflow: auto;
     height: calc(100vh - 56px);
   }
@@ -154,7 +154,7 @@ hr {
 
 @media only screen and (min-width: 600px) {
   #homeContentPojects #textEng {
-    scroll-snap-type: none;
+    scroll-snap-type: y mandatory;
     
   }
 }
@@ -853,7 +853,7 @@ hr {
   color: white;
 }
 #textEng {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   overflow: auto;
   height: 100%;
 }
