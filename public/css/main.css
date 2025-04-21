@@ -1,14 +1,12 @@
 @media only screen and (min-width: 700px) and (orientation: portrait) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
+  body {
+    height: 10px;
   }
 }
 
 @media only screen and (min-width: 1200px) and (orientation: landscape) {
-  #homeContentPojects #textEng {
-    scroll-snap-type: y mandatory;
-    overflow: auto;
+  body {
+    height: 10px;
   }
 }
 ::-webkit-scrollbar {
