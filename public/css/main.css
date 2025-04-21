@@ -853,8 +853,8 @@ hr {
 }
 
 /* Disable on smaller devices */
-@media only screen and (max-width: 699px), 
-       only screen and (max-height: 1499px) {
+@media only screen and (max-device-width: 699px), 
+       only screen and (max-device-height: 1499px) {
   #homeContentPojects #textEng {
     scroll-snap-type: none;
   }
