@@ -1,0 +1,249 @@
+doctype html
+html(lang='en')
+  head
+    link(rel="preload" as="image" href="https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039")
+    link(rel="shortcut icon" href="https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/programming2.ico?v=1745001901470")
+    style.
+      //- #aboutMe {
+      //-   background-color: rgb(128, 128, 128, 0.9);
+      //- }
+      //- #aboutMe:hover {
+      //-   background-color: #555;
+      //- }
+    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='public/css/main.css')
+    link(rel="stylesheet" href='public/css/fontello.css')
+    title My Projects
+    script(type='text/javascript').
+      let views = 0;
+      let stored = false;
+      let prevURL;
+      const lastPageUrl = document.referrer; 
+      prevURL = lastPageUrl.toString();
+      currentURL = window.location.href;
+      currURL = currentURL.toString();
+      console.log(prevURL);
+      function updateCounter(type) {
+        return fetch('https://artur-bednarski.onrender.com/api?' + type)
+        .then((res) => res.json());
+      }
+      // Update counter on page load or refresh
+      if (performance.navigation.type === 1) {
+        updateCounter("type=visit-pageview")
+        .then((data) => {
+          views = data.pageviews;
+          const pageviewsCount = document.getElementById('visitEng');
+          const pageviewsCount1 = document.getElementById('visitPol');
+          if (pageviewsCount || pageviewsCount1) {
+            pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+            pageviewsCount1.textContent = "Wizyty: " + views;
+          }
+          sessionStorage.setItem("visit", "x");
+          // Store 'views' in localStorage
+          localStorage.setItem('views', views);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      } else {
+        // If not a page load or refresh, check if it's a specific page
+        if (prevURL != 'https://artur-bednarski.onrender.com/applications' &&
+          prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
+          prevURL != 'https://artur-bednarski.onrender.com/games' &&
+          prevURL != 'https://artur-bednarski.onrender.com/') {
+          updateCounter("type=pageview")
+          .then((data) => {
+            views = data.pageviews;
+            const pageviewsCount = document.getElementById('visitEng');
+            const pageviewsCount1 = document.getElementById('visitPol');
+            if (pageviewsCount || pageviewsCount1) {
+              pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+              pageviewsCount1.textContent = "Wizyty: " + views;
+            }
+            // Store 'views' in localStorage
+            localStorage.setItem('views', views);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+        } else {
+          stored = true;
+        }
+      }
+    //console.log(window.location.href);
+  body
+    span.tooltip-textEng
+    span.tooltip-textPol
+    img.code(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039')
+    .content
+      .menu
+        //- div.submenu1
+        div.aboutLeft
+        a#aboutMe(href='/' style="border-bottom: solid #84ff0f 2px;")
+          div#engAbout.toggle-element.visible About Me
+          div#polAbout.pol.toggle-element O mnie
+        div(style="width:20px;border-bottom-right-radius: 10px; border-style: solid; border-color: #84ff0f; border-width: 0 2px 2px 0;")
+        .dropdown(style="background: none;")
+          div#projects.bg
+            a#projectsEng.services.toggle-element.visible Projects
+            a#projectsPol.services.toggle-element Projekty
+          .dropdown-content.hidden(style='display: none;')
+            a#apps.service(href="/applications" onclick='hidemenu()')
+              i.icon-laptop
+            a#mech.service(href='/mechanics' onclick='hidemenu()')
+            a#games.service(href='/games' onclick='hidemenu()')
+        div.filler(style="border-bottom-left-radius: 10px; border-left: solid #84ff0f 2px; border-bottom: solid #84ff0f 2px;")
+        div#visits
+          a#visitEng.visits.toggle-element.visible
+          a#visitPol.visits.toggle-element
+        div#lang(onclick="toggleElements(); changeAllTexts();")
+          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/POL.jpg?v=1699542939034')#eng.toggle-element.visible
+          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/UK.jpg?v=1699539920089')#pol.toggle-element  
+        div.rightCorner
+    .main
+      .mainContent
+        #viewer
+          #image-viewer
+            img(src='' onclick="back()")#displayed-image
+        #homeContentPojects
+          #textEng(style="width: 100%;")
+            div.project
+              .projectTitle
+                | "CIPHER CONNECT"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
+                .description
+                  | Real-time chat application allows seamless communication between users. Messages are delivered instantly to all connected users using WebSocket technology, ensuring fast and efficient communication. Users are securely authenticated with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of their conversations. The application uses an SQLite database to store user credentials, messages, and interactions, providing reliable and lightweight data management. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security. The chat application is compatible across multiple devices, making communication flexible and accessible.
+              .tables 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, WebSocket, Crypto, JWT, SQL
+                a(href='https://cipherconnect.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
+                  .linkEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-globe
+                      p.borderContent
+                        | Link
+                a(href='https://github.com/arturr0/CipherConnect2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
+            div.project
+              .projectTitle
+                | "MOVIE RANKER"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
+                .description
+                  | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
+              .tables 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, NestJS, SSE, PostreSQL, Bcrypt, JWT
+                a(href='https://movieranker-gavh.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
+                  .linkEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-globe
+                      p.borderContent
+                        | Link
+                a(href='https://github.com/arturr0/MovieRanker' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+            hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
+            div.project
+              .projectTitle
+                | "WAREHOUSE API"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/new.bmp?v=1714693587866' onclick="display()").projectImg
+                .description
+                  | An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.
+              .tables(style="margin-bottom: 10px;") 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | JavaScript, HTML5, CSS, Express.JS  
+                a(href='https://nostalgic-caterwauling-nylon.glitch.me/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
+                  .linkEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-globe
+                      p.borderContent
+                        | Link
+                a(href='https://github.com/arturr0/crud-api2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+            hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
+            div.project
+              .projectTitle
+                | "VBA SCRIPT SET"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
+                .description
+                  | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
+              .tables(style="margin-bottom: 10px;") 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | Visual Basic for Applications  
+                a(href='https://github.com/arturr0/VBA-scripts' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+            hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0;")
+            div.project(style="margin-bottom: 15px;")
+              .projectTitle "SQL DATABASE MANAGER"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
+                .description
+                  | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
+              .tables(style="width: 35%") 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | C++, SQL
+                a(href='https://github.com/arturr0/C-SQL-handler' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+    script(type='text/javascript').
+      let storedViews = localStorage.getItem('views');
+      document.getElementById('visitEng').textContent = "Visits: " + storedViews;
+      document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
+      projectTxt = [
+        ["Real-time chat application allows seamless communication between users. Messages are delivered instantly to all connected users using WebSocket technology, ensuring fast and efficient communication. Users are securely authenticated with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of their conversations. The application uses an SQLite database to store user credentials, messages, and interactions, providing reliable and lightweight data management. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security. The chat application is compatible across multiple devices, making communication flexible and accessible.", 
+        "Aplikacja do czatu w czasie rzeczywistym umożliwiająca płynną komunikację między użytkownikami. Wiadomości są dostarczane natychmiastowo do wszystkich połączonych użytkowników dzięki technologii WebSocket, która zapewnia szybkie i efektywne działanie. Użytkownicy są bezpiecznie uwierzytelniani za pomocą JSON Web Tokens (JWT), standardu autoryzacji, który chroni prywatność i integralność ich rozmów. Aplikacja korzysta z bazy danych SQLite do przechowywania danych użytkowników, wiadomości i interakcji, co zapewnia niezawodne i lekkie zarządzanie danymi. Wrażliwe informacje są zabezpieczane za pomocą zaawansowanych algorytmów kryptograficznych, aby zapewnić maksymalne bezpieczeństwo. Aplikacja czatu działa na wielu urządzeniach, co umożliwia elastyczną i wygodną komunikację."],
+        ["NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.",
+        "Aplikacja API oparta na NestJS, służąca do oceniania filmów oraz osób związanych z kinem. Użytkownicy mogą oceniać filmy, aktorów i reżyserów, a aktualizacje w czasie rzeczywistym są realizowane za pomocą Server-Sent Events (SSE). Uwierzytelnianie i bezpieczeństwo obsługiwane są za pomocą JWT oraz bcrypt, które zapewniają bezpieczne haszowanie haseł. Aplikacja udostępnia uporządkowane RESTful API do zarządzania filmami, rankingami i użytkownikami. Dane filmowe pochodzą z bazy The Movie Database (TMDB), co gwarantuje ich aktualność i wiarygodność."],
+        ["An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.",
+        "Interfejs API oparty o funkcje CRUD (create, read, update, delete). “Warehouse API” umożliwia przechowywanie i aktualizowanie stanu magazynowego produktów. Aby wprowadzić nowy produkt należy wpisać jego nazwę i ilość w odpowiednie okna, a następnie kliknąć przycisk CREATE PRODUCT. Ilość produktów przedstawiają wykresy słupkowe (kod renderowania wykresów napisany jest w bibliotece P5.JS). Przycisk UPDATE podmienia nazwę produktu lub ilość na nową. Ilość można aktualizować przyciskami '+'' i '-'"],
+        ["A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.", 
+        "Zestaw skryptów Visual Basic for Applications do automatycznej migracji danych pomiędzy MS Word a MS Excel."],
+        ["Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.",
+        "Aplikacja do zarządzania bazą danych SQL, która wykorzystuje C++ oraz interfejs ODBC do komunikacji z serwerem Microsoft SQL Server. Program umożliwia tworzenie kont użytkowników, logowanie oraz aktualizację kont. Aplikacja zapewnia obsługę błędów i walidację danych, oferując bezpieczny i efektywny sposób zarządzania danymi użytkowników. Interfejs pozwala na wykonywanie operacji CRUD, w tym walidację danych wejściowych oraz wyświetlanie komunikatów o błędach związanych z interakcją z bazą danych."],
+        ];
+    script(src='public/dropdown.js')

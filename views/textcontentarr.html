@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Switcher</title>
+  <style>
+    .text-container {
+      transition: opacity 0.3s ease;
+      opacity: 1;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="textBlocks">
+    <p class="text-container">Paragraph 1 version A</p>
+    <p class="text-container">Paragraph 2 version A</p>
+    <p class="text-container">Paragraph 3 version A</p>
+  </div>
+  <button onclick="changeAllTexts()">Toggle Text</button>
+
+  <script>
+    const texts = [
+      ["Paragraph 1 version A", "Paragraph 1 version B"],
+      ["Paragraph 2 version A", "Paragraph 2 version B"],
+      ["Paragraph 3 version A", "Paragraph 3 version B"]
+    ];
+
+    let showAlt = false;
+
+    function changeAllTexts() {
+      const paragraphs = document.querySelectorAll('.text-container');
+      showAlt = !showAlt;
+
+      paragraphs.forEach((p, i) => {
+        p.classList.add('fade-out');
+
+        // Wait for fade out
+        setTimeout(() => {
+          p.textContent = texts[i][showAlt ? 1 : 0];
+          p.classList.remove('fade-out');
+        }, 180); // should match CSS transition duration
+      });
+    }
+  </script>
+</body>
+</html>
