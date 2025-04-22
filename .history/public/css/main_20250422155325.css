@@ -1125,14 +1125,6 @@ hr {
     height: auto;
   }
   }
-@media (pointer: coarse) {
-  .border .Eng {
-    width: 95px;
-  }
-  .border .Pol {
-    width: 85px;
-  }
-}
   
   .description.fade-out {
     opacity: 0;
