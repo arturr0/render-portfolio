@@ -1,249 +1,1124 @@
-doctype html
-html(lang='en')
-  head
-    link(rel="preload" as="image" href="https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039")
-    link(rel="shortcut icon" href="https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/programming2.ico?v=1745001901470")
-    style.
-      //- #aboutMe {
-      //-   background-color: rgb(128, 128, 128, 0.9);
-      //- }
-      //- #aboutMe:hover {
-      //-   background-color: #555;
-      //- }
-    script(src='https://code.jquery.com/jquery-3.6.0.min.js')
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet' href='public/css/main.css')
-    link(rel="stylesheet" href='public/css/fontello.css')
-    title My Projects
-    script(type='text/javascript').
-      let views = 0;
-      let stored = false;
-      let prevURL;
-      const lastPageUrl = document.referrer; 
-      prevURL = lastPageUrl.toString();
-      currentURL = window.location.href;
-      currURL = currentURL.toString();
-      console.log(prevURL);
-      function updateCounter(type) {
-        return fetch('https://artur-bednarski.onrender.com/api?' + type)
-        .then((res) => res.json());
-      }
-      // Update counter on page load or refresh
-      if (performance.navigation.type === 1) {
-        updateCounter("type=visit-pageview")
-        .then((data) => {
-          views = data.pageviews;
-          const pageviewsCount = document.getElementById('visitEng');
-          const pageviewsCount1 = document.getElementById('visitPol');
-          if (pageviewsCount || pageviewsCount1) {
-            pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
-            pageviewsCount1.textContent = "Wizyty: " + views;
-          }
-          sessionStorage.setItem("visit", "x");
-          // Store 'views' in localStorage
-          localStorage.setItem('views', views);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-      } else {
-        // If not a page load or refresh, check if it's a specific page
-        if (prevURL != 'https://artur-bednarski.onrender.com/applications' &&
-          prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
-          prevURL != 'https://artur-bednarski.onrender.com/games' &&
-          prevURL != 'https://artur-bednarski.onrender.com/') {
-          updateCounter("type=pageview")
-          .then((data) => {
-            views = data.pageviews;
-            const pageviewsCount = document.getElementById('visitEng');
-            const pageviewsCount1 = document.getElementById('visitPol');
-            if (pageviewsCount || pageviewsCount1) {
-              pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
-              pageviewsCount1.textContent = "Wizyty: " + views;
-            }
-            // Store 'views' in localStorage
-            localStorage.setItem('views', views);
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-        } else {
-          stored = true;
+/* Portrait orientation */
+@media screen and (max-width: 360px) and (max-height: 640px) and (orientation: portrait) {
+  #homeContentPojects #textEng {
+  scroll-snap-type: none !important;
+  overflow: auto;
+  height: 100%;
+}
+}
+
+/* Landscape orientation */
+@media screen and (max-width: 640px) and (max-height: 360px) and (orientation: landscape) {
+  #homeContentPojects #textEng {
+  scroll-snap-type: none !important;
+  overflow: auto;
+  height: 100%;
+}
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px 10px transparent;
+  border: solid 3px transparent;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px  #84ff0f;
+  border: solid 3px transparent;
+}
+body {
+  font-family: OCR A Std, monospace;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 5px #000, 0 0 10px #000;
+  
+}
+html {
+  overflow-x: auto;
+}
+hr {
+  background-color: #84ff0f;
+  box-shadow: 0 0 3px #84ff0f;
+  height: 2px;
+}
+/* .imageDescription {
+  display: flex;
+} */
+.tools {
+            display: flex;
+/*             justify-content: center; */
         }
-      }
-    //console.log(window.location.href);
-  body
-    span.tooltip-textEng
-    span.tooltip-textPol
-    img.code(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039')
-    .content
-      .menu
-        //- div.submenu1
-        div.aboutLeft
-        a#aboutMe(href='/' style="border-bottom: solid #84ff0f 2px;")
-          div#engAbout.toggle-element.visible About Me
-          div#polAbout.pol.toggle-element O mnie
-        div(style="width:20px;border-bottom-right-radius: 10px; border-style: solid; border-color: #84ff0f; border-width: 0 2px 2px 0;")
-        .dropdown(style="background: none;")
-          div#projects.bg
-            a#projectsEng.services.toggle-element.visible Projects
-            a#projectsPol.services.toggle-element Projekty
-          .dropdown-content.hidden(style='display: none;')
-            a#apps.service(href="/applications" onclick='hidemenu()')
-              i.icon-laptop
-            a#mech.service(href='/mechanics' onclick='hidemenu()')
-            a#games.service(href='/games' onclick='hidemenu()')
-        div.filler(style="border-bottom-left-radius: 10px; border-left: solid #84ff0f 2px; border-bottom: solid #84ff0f 2px;")
-        div#visits
-          a#visitEng.visits.toggle-element.visible
-          a#visitPol.visits.toggle-element
-        div#lang(onclick="toggleElements(); changeAllTexts();")
-          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/POL.jpg?v=1699542939034')#eng.toggle-element.visible
-          img(src='https://cdn.glitch.global/fa1cb8d5-4868-42bc-bf52-27fcc0455e8f/UK.jpg?v=1699539920089')#pol.toggle-element  
-        div.rightCorner
-    .main
-      .mainContent
-        #viewer
-          #image-viewer
-            img(src='' onclick="back()")#displayed-image
-        #homeContentPojects
-          #textEng(style="width: 100%;")
-            div.project
-              .projectTitle
-                | "CIPHER CONNECT"
-              .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
-                .description
-                  | Cipher Connect allows seamless communication between users. Messages are delivered instantly to connected parties using WebSocket technology. Authentication is handled securely with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of conversations. The application uses an SQLite database to store credentials, messages, and interactions. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security.
-              .tables 
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | JavaScript, HTML5, CSS, WebSocket, Crypto, JWT, SQL
-                a(href='https://cipherconnect.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
-                  .linkEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-globe
-                      p.borderContent
-                        | Link
-                a(href='https://github.com/arturr0/CipherConnect2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project
-              .projectTitle
-                | "MOVIE RANKER"
-              .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
-                .description
-                  | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
-              .tables 
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | JavaScript, HTML5, CSS, NestJS, SSE, PostreSQL, Bcrypt, JWT
-                a(href='https://movieranker-gavh.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
-                  .linkEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-globe
-                      p.borderContent
-                        | Link
-                a(href='https://github.com/arturr0/MovieRanker' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project
-              .projectTitle
-                | "WAREHOUSE API"
-              .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/new.bmp?v=1714693587866' onclick="display()").projectImg
-                .description
-                  | An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.
-              .tables(style="margin-bottom: 10px;") 
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | JavaScript, HTML5, CSS, Express.JS  
-                a(href='https://nostalgic-caterwauling-nylon.glitch.me/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
-                  .linkEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-globe
-                      p.borderContent
-                        | Link
-                a(href='https://github.com/arturr0/crud-api2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project
-              .projectTitle
-                | "VBA SCRIPT SET"
-              .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
-                .description
-                  | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
-              .tables(style="margin-bottom: 10px;") 
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | Visual Basic for Applications  
-                a(href='https://github.com/arturr0/VBA-scripts' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project(style="margin-bottom: 15px;")
-              .projectTitle "SQL DATABASE MANAGER"
-              .imageDescription
-                .image
-                  img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
-                .description
-                  | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
-              .tables
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | C++, SQL
-                a(href='https://github.com/arturr0/C-SQL-handler' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-    script(type='text/javascript').
-      let storedViews = localStorage.getItem('views');
-      document.getElementById('visitEng').textContent = "Visits: " + storedViews;
-      document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
-      projectTxt = [
-        ["Cipher Connect allows seamless communication between users. Messages are delivered instantly to connected parties using WebSocket technology. Authentication is handled securely with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of conversations. The application uses an SQLite database to store credentials, messages, and interactions. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security.", 
-        "Cipher Connect umożliwia płynną komunikację między użytkownikami. Wiadomości są natychmiast dostarczane do połączonych odbiorców dzięki technologii WebSocket. Uwierzytelnianie odbywa się w bezpieczny sposób za pomocą tokenów JWT (JSON Web Tokens) – standardu autoryzacji, który chroni prywatność i integralność rozmów. Aplikacja wykorzystuje bazę danych SQLite do przechowywania danych logowania, wiadomości oraz interakcji. Wrażliwe informacje są szyfrowane zaawansowanymi algorytmami kryptograficznymi, co zapewnia maksymalne bezpieczeństwo."],
-        ["NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.",
-        "Aplikacja API oparta na NestJS, służąca do oceniania filmów oraz osób związanych z kinem. Użytkownicy mogą oceniać filmy, aktorów i reżyserów, a aktualizacje w czasie rzeczywistym są realizowane za pomocą Server-Sent Events (SSE). Uwierzytelnianie i bezpieczeństwo obsługiwane są za pomocą JWT oraz bcrypt, które zapewniają bezpieczne haszowanie haseł. Aplikacja udostępnia uporządkowane RESTful API do zarządzania filmami, rankingami i użytkownikami. Dane filmowe pochodzą z bazy The Movie Database (TMDB), co gwarantuje ich aktualność i wiarygodność."],
-        ["An API interface based on CRUD functions (create, read, update, delete). The 'Warehouse API' allows storing and updating the inventory status of products. To add a new product, enter its name and quantity in the respective fields, then click the 'CREATE PRODUCT' button. Bar charts represent the quantity of products (the chart rendering code is written in the P5.JS library). The 'UPDATE' button replaces the product name or quantity with a new one. The quantity can be updated using the '+' and '-' buttons.",
-        "Interfejs API oparty o funkcje CRUD (create, read, update, delete). “Warehouse API” umożliwia przechowywanie i aktualizowanie stanu magazynowego produktów. Aby wprowadzić nowy produkt należy wpisać jego nazwę i ilość w odpowiednie okna, a następnie kliknąć przycisk CREATE PRODUCT. Ilość produktów przedstawiają wykresy słupkowe (kod renderowania wykresów napisany jest w bibliotece P5.JS). Przycisk UPDATE podmienia nazwę produktu lub ilość na nową. Ilość można aktualizować przyciskami '+'' i '-'"],
-        ["A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.", 
-        "Zestaw skryptów Visual Basic for Applications do automatycznej migracji danych pomiędzy MS Word a MS Excel."],
-        ["Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.",
-        "Aplikacja do zarządzania bazą danych SQL, która wykorzystuje C++ oraz interfejs ODBC do komunikacji z serwerem Microsoft SQL Server. Program umożliwia tworzenie kont użytkowników, logowanie oraz aktualizację kont. Aplikacja zapewnia obsługę błędów i walidację danych, oferując bezpieczny i efektywny sposób zarządzania danymi użytkowników. Interfejs pozwala na wykonywanie operacji CRUD, w tym walidację danych wejściowych oraz wyświetlanie komunikatów o błędach związanych z interakcją z bazą danych."],
-        ];
-    script(src='public/dropdown.js')
+        .svgText {
+            display: flex;
+            border: solid 3px#84ff0f;
+            box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+            /* height: 80px; */
+            border-radius: 40px;
+            margin-right: 10px;
+            align-items: center;
+            background-color: #001d15;
+        }
+        .first {
+          margin-left: auto;
+          
+        }
+        .last {
+          margin-right: auto;
+          
+        }
+        .text {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 5px;
+            margin-right: 20px;
+            /* height: 50px; */
+        }
+        .title {
+          text-align: center;
+          margin: 10px;
+          font-size: 20px;
+          display: grid;
+        }
+        .typing-container {
+          text-align: center;
+          font-size: 25px;
+          height: 65px;
+          margin-top: 10px;
+        }
+        /* .logo, .text {
+            display: inline-block;
+        } */
+        .logo {
+            width: auto;
+            height: 4vh;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 6px;
+        }
+        .icon-microchip {
+            width: auto;
+/*             height: 20px; */
+            margin-top: 3px;
+            margin-bottom: auto; 
+            padding: 5px;
+            font-size: 3vh;
+            /* margin: auto; */
+            
+
+        }
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.woff2') format('woff2'),
+         url('../fonts/fontello.woff') format('woff'),
+         url('../fonts/fontello.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 1200px) and (orientation: landscape) and (pointer: coarse) {
+   
+  .main #displayed-image {
+    height: 200px;
+    width: auto;
+  }
+  .main #displayed-image {
+    height: 250px;
+    width: auto;
+  }
+  .svgText .devicon-socketio-original {
+    font-size: 20px;
+    /* padding: 7px; */
+  }
+  #homeContentPojects #textEng {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    height: calc(100vh - 56px);
+  }
+  ::-webkit-scrollbar {
+  width: 0px;
+  
+}
+  .main .Pol {
+    width: 75px;
+    
+  }
+  .main .Eng {
+    width: 90px;
+    
+  }
+  .main .description {
+/*     overflow: auto; */
+    height: auto;
+  }
+  .main .projectImg {
+    width: 23vw;
+    height: auto;
+  }
+  /* .main .tables {
+    width: 60%;
+  } */
+  
+}
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .main .projectImg {
+        height: auto; /* Set a maximum height of 100 viewport height units */
+        width: 50vw;
+    }
+  .main #displayed-image {
+    height: 200px;
+    width: auto;
+  }
+  .main .svgText {
+    display: flex;
+    border: solid 3px #84ff0f;
+    box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+    border-radius: 40px;
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+  .svgText .devicon-socketio-original {
+    font-size: 30px;
+    padding: 7px;
+  }
+  .main .first {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .last {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .main .mainContent #homeContent {
+    width: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main .tools {
+   display: inline-flex;
+/*     margin-bottom: 5px; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+  }
+  .main .svgText {
+    margin-bottom: 10px;
+    border: solid 2px #84ff0f;
+    box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+    background-color: #001d15;
+  }
+  
+  ::-webkit-scrollbar {
+  width: 0px;
+  
+}
+  .main .Pol {
+    width: 75px;
+    
+  }
+  .main .Eng {
+    width: 90px;
+    
+  }
+  .menu #lang {
+  position: relative;
+  width: 45px;
+  padding: 0;
+  /* background-color: rgb(128,128,128, 0.9); */
+  /* height: 54px; */
+  
+}
+  .main #textPol {
+    text-align: left !important;
+    overflow-x: hidden;
+/*     font-size: 30px; */
+  }
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .menu .visits {
+    font-size: 20px; /* Ensure this value is correctly set */
+    white-space: normal;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .menu #visits {
+    font-size: 20px;
+  }
+  .menu #aboutMe {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  .main .longerprojectTitle {
+  height: 90px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+  .main .longprojectTitle {
+  height: 80px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+}
+  .menu #visitEng, #visitPol {
+    position: absolute;
+    font-size: 12px;
+    /* width: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 10px; */
+}
+  .menu #visits {
+    position: relative;
+    height: 54px;
+    width: 60px;
+    margin-left: auto;
+    /* background-color: rgb(128, 128, 128, 0.9); */
+}
+  .main #textEng {
+  text-align: left !important; 
+  overflow-x: hidden;
+  
+}
+  .menu #aboutMe {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  /* Ensure no gaps or unexpected padding/margins */
+  .menu {
+    gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .main .tables {
+    font-size: 13px;
+    min-width: 100%;
+    overflow: auto;
+    gap: 10px;
+  }
+
+
+  .main .border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main .Eng {
+  position: relative;
+  
+  min-width: 90px;
+  white-space: nowrap;
+  min-height: 20px;
+
+}
+.main .Pol {
+  position: relative;
+  
+  min-width: 80px;
+  white-space: nowrap;
+  min-height: 20px;
+
+}
+}
+.tables {
+  
+  gap: 10px;
+}
+  
+  
+@media (max-device-width: 1200px) {
+  .menu .homeLink .services,
+  .about #pageviews-count {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none;
+    color: rgb(9, 68, 29);
+    height: 60px;
+    
+  }
+  
+
+} 
+.hidden {
+  display: none;
+  user-select: text;
+
+}
+
+  .menu .dropdown .dropdown-content {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.7s;
+    z-index: 10;
+  }
+  .menu #visits {
+    position: relative;
+    height: 54px;
+    width: 70px;
+    margin-left: auto;
+    /* background-color: rgb(128, 128, 128, 0.9); */
+}
+  .menu .dropdown .hidden {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .menu .homeLink .services,
+  .visits #pageviews-count {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none;
+    color: black;
+    height: 60px;
+    
+  }
+  
+.hidden {
+  display: none;
+}
+  .menu .dropdown .dropdown-content.services {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.7s;
+     transition: max-height 0.7s;
+    z-index: 10;
+  }
+
+  .menu .dropdown .hidden {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .main .mainContent #homeContent {
+  overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
+  height: 100%; /* Take up 100% of the parent's height */
+  width: 100%;
+  /* background-color: rgba(176,196,222, 0.8); */
+  border-radius: 10px;
+  font-weight: bold;
+  position: relative;
+  display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #homeContentPojects {
+    overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
+    height: 100%; /* Take up 100% of the parent's height */
+    width: 100%;
+    /* background-color: rgba(176,196,222, 0.8); */
+    border-radius: 10px;
+    font-weight: bold;
+    position: relative;
+  }
+  .content .menu #aboutMe {
+    margin-left: 0;
+  }
+  .menu #pol, #eng {
+    width: 45px;
+    height: 30px;
+/*     object-fit: contain; */
+/*     margin-left: 20px; */
+  }
+/*   .content .menu #lang {
+    margin-right: 3px;
+    padding: 0;
+  } */
+  
+/*   .menu #pol, #eng {
+    margin-right: 10px;
+  } */
+  .menu .visits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #84ff0f;
+    height: 54px;
+/*     padding-left: 10px; */
+    padding-right: 3px;
+    border-bottom: 2px solid #84ff0f;
+    box-sizing: border-box;
+}
+  
+  .menu #visits {
+    position: relative;
+    height: 54px;
+/*     width: 600px; */
+    margin-left: auto;
+    /* background-color: rgb(128, 128, 128, 0.9); */
+/*     text-align: center; */
+}
+  .menu #visits::first-word {
+    display: block;
+}
+.menu #visits::last-word {
+    display:block
+  } 
+  .main .border {
+  background: transparent;
+  height: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 2px;
+  border: solid 3px#84ff0f;
+  box-shadow: 0 0 5px #84ff0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #001d15;
+}
+ 
+
+
+@media only screen and (min-device-width: 900px) {
+  /* .menu ul li a:hover {
+    background-color: #555;
+  } */
+  .menu div {
+  margin: 0;
+  padding: 0;
+}
+  
+/*   .main .projectTitle {
+    height: 20px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  } */
+  
+  .menu .dropdown:hover .dropdown-content,
+  .dropdown-content:hover {
+    max-height: 1000px; /* Adjust this value based on your dropdown's height */
+     transition: max-height 0.7s;
+    z-index: 10;
+  }
+/*   .menu .dropdown-content a:hover {
+    background-color: #555;
+  } */
+}
+#viewer {
+  display: none;
+  justify-content: center;
+  align-items: center;  
+  height: 100%; /* Take up 100% of the parent's height */
+  width: 100%;/* Adjust this value based on your needs */
+  padding: 20px;
+  z-index: 1;
+  background: transparent;  
+  
+}
+.view {
+  height: auto; /* Take up 100% of the parent's height */
+  width: auto;
+}
+.icon-user {
+  font-style: normal;
+}
+
+#aboutMe {
+  position: relative;
+  height: 54px;
+  min-width: 95px;
+  text-align: center;
+  margin-left: 50px;
+  margin: 0;
+/*   padding-right: 10px; */
+}
+/* #aboutMe:hover {
+  background-color: #555;
+} */
+#engAbout, #polAbout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: #84ff0f;
+  transition: opacity 0.5s ease, visibility 0.5s ease, font-size 0.3s ease;
+
+}
+#engAbout:hover, #polAbout:hover {
+  font-size: 20px;
+}
+#projects {
+  position: relative;
+  transition: font-size 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: #84ff0f;
+  width: 100px;
+  height: 54px;
+}
+#projects:hover {
+  font-size: 20px;
+}
+
+#projectsEng, #projectsPol {
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.toggle-element {
+  opacity: 0;
+  display: hidden;
+  grid-area: 1/1;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Adjust the duration and easing function as needed */
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+
+}
+/* #home:hover, #service1:hover, #service2:hover, #service3:hover, #engAbout:hover, #polAbout:hover, #lang:hover, #projects:hover {
+  background-color: #555;
+} */
+#aboutMe {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.org {
+  border: none;
+}
+.homeLink,
+#lang {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+  color: black;
+  border-bottom: solid #84ff0f 2px;
+  
+/*   padding-left: 10px;
+  padding-right: 10px; */
+  position: relative;
+}
+.services {
+  position: absolute;
+}
+.visits {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+  color: black;
+  height: 54px;
+/*   padding-left: 10px; */
+  padding-right: 3px;
+  
+  
+}
+#visits {
+    position: relative;
+    height: 54px;
+    width: 150px;
+    margin-left: auto;
+    /* background-color: rgb(128, 128, 128, 0.9); */
+    white-space: nowrap;
+}
+#visitEng, #visitPol {
+  position: absolute;
+}
+#pageviews-count {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-decoration: none;
+  color: black;
+  height: 60px;
+}
+
+/* .bg {
+  background-color: white;
+} */
+/* .homeLink:hover,
+.services:hover {
+  background-color: #555;
+} */
+.services {
+  user-select: none;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black; /* Set the font color to black */
+  height: 54px;
+  margin: 3px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+  z-index: 1;
+  
+}
+.filler {
+  flex-grow: 1;
+}
+  
+.submenu {
+  position: absolute; 
+  top: 3px; 
+  left: 3px;
+  width: 140px;
+  height: 54px;
+  
+  z-index: -1;
+  border-top-left-radius: 20px;
+}
+.submenu1 {
+  position: absolute; 
+  top: 3px; 
+  left: 100px;
+  width: 130px;
+  height: 54px;
+  
+  z-index: -1;
+}
+
+.dropdown {
+  position: relative;
+  /* background-color: rgb(128, 128, 128, 0.9); */
+   
+    z-index: 10;
+}
+
+.dropdown .dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  background-color: #001d15;
+  min-width: auto;
+  white-space: nowrap;
+  z-index: 10;
+  top: 100%; /* Position the dropdown-content below the menu item */
+  left: calc(-50% + 10px); /* Align the left edges */
+  transition: max-height 0.7s;
+  
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #84ff0f;
+  text-decoration: none;
+  width: auto;
+}
+
+
+
+.code {
+  position: absolute;
+  left: 0; /* Set the left position (horizontal) */
+  top: 3px;
+  z-index: -1;
+  width: calc(100% - 6px);
+  height: calc(100vh - 3px);
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.main {
+  height: calc(100vh - 60px);
+}
+.mainContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Adjust this value based on your needs */
+  overflow: hidden;  
+  box-sizing: border-box;
+  padding: 0 10px 10px 10px;  
+}
+
+#homeContent {
+  overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
+  height: 100%; /* Take up 100% of the parent's height */
+  width: 100%;
+  /* background-color: rgba(176,196,222, 0.8); */
+  border-radius: 10px;
+  font-weight: bold;
+  position: relative;
+  z-index: 0;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#eng, #pol, #textEng, #textPol {
+  position: absolute;
+}
+
+.icon-user, .icon-group, .icon-list-alt {
+  margin: 4px;
+}
+.tables:not(#Ctables) {
+  display: flex;
+  flex-direction: row;
+/*   justify-content: flex-start; */
+/*   margin-top: 10px; */
+  /* max-width: 45%; */
+  /* margin-bottom: 7px; */
+}
+.tables {
+  overflow: auto;
+}
+#Ctables {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  
+}
+ 
+
+.border {
+  background: transparent;
+  height: 36px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  padding: 2px;
+  border: solid 3px #84ff0f;
+  box-shadow: 0 0 5px #84ff0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: 15px; */
+  width: auto;
+  font-size: 1.2rem;
+}
+.downloadContainer {
+  color: white;
+}
+#textEng {
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100%;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: auto;
+  /* overflow: auto; */
+  scroll-snap-align: start;
+  height: calc(100vh - 56px);
+  justify-content: space-evenly;
+}
+/* .imageDescription {
+  display: flex;
+  flex-direction: row;
+} */
+
+.imageTables {
+  display: flex;
+  flex-direction: column;
+}
+.image {
+  
+  
+  float: left;
+}
+.projectImg {
+
+  /* width: auto; */
+  height: auto;
+  /* width: 50vw; */
+  float: left;
+  display: block; /* Prevents extra space below inline-block images */
+  border: 2px solid #84ff0f;
+  border-radius: 10px;
+  position: sticky;
+  margin-right: 10px;
+}
+.projectImg:hover {
+  /* border: 2px solid white; */
+  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+  border-radius: 10px;
+}
+.git, .link, .tech {
+  position: relative;
+ 
+}
+.descriptionEng, .descriptionPol {
+  grid-area: 1/1;
+  user-select: text;
+  font-size: 20px;
+}
+
+.borderContent {
+  margin-right: 4px;
+}
+
+#displayed-image {
+  width: 900px;
+  height: auto;
+}
+#displayed-image:hover {
+  box-shadow: 0 0 10px #84ff0f, 0 0 20px #84ff0f;
+}
+/* .projectTitle {
+       padding: 10px;
+       font-weight: bold;
+       font-size: 20px;
+       height: auto; /* Allow the height to adjust based on the content */
+/*        min-height: 20px; /* Ensure it has a minimum height */ */
+/*    } */ */
+/* .engTitle, .polTitle {
+  position: absolute;
+} */
+.Eng {
+  position: relative;
+  
+  width: 85px;
+  white-space: nowrap;
+  min-height: 20px;
+
+}
+.Pol {
+  position: relative;
+  
+  width: 70px;
+  white-space: nowrap;
+  min-height: 20px;
+
+}
+.downloadEng, .downloadPol {
+  position: absolute;
+}
+#eng, #pol {
+  width:45px;
+  height:30px;
+  border: 2px solid transparent;
+
+}
+#eng:hover {
+  border: 2px solid #84ff0f;
+}
+#pol:hover {
+  border: 2px solid #84ff0f;
+}
+.aboutLeft {
+  width: 20px;
+  border-top-left-radius: 20px;
+  /* background-color: rgb(128, 128, 128, 0.9); */
+  border-bottom: 2px solid #84ff0f;
+}
+.rightCorner {
+  width:20px;
+  border-top-right-radius: 20px;
+  /* background-color: rgb(128, 128, 128, 0.9); */
+  border-bottom: solid 2px #84ff0f;
+
+}
+.tooltip-textEng, .tooltip-textPol{
+  display: none;
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 4;
+}
+/* #lang {
+  background-color: #808080;
+  
+  
+} */
+
+.menu div {
+  margin: 0;
+  padding: 0;
+}
+.menu div {
+  gap: 0;
+}
+.submenu1 {
+  width: 250px;
+}
+.filler {
+  flex-grow: 1;
+}
+
+.projectTitle {
+  /* height: 20px; */
+  padding: 10px;
+  font-weight: bold;
+  display: grid;
+  justify-content: center;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  padding: 5px;
+  border: solid 3px #84ff0f;
+  box-shadow: 0 0 5px #84ff0f;
+  /* margin: 10px auto 10px auto; */
+  font-size: 1.4rem;
+  text-align: center;
+}
+.longprojectTitle {
+/*   height: 50px; */
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-size: 20px;
+  
+}
+#sql {
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  font-size: 20px;
+  
+}
+.longerprojectTitle {
+/*   height: 70px; */
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  font-size: 20px;
+}
+.engTitle, .polTitle {
+/*   position: absolute; */
+  grid-area: 1/1;
+  text-align: center;
+}
+#lang {
+  position: relative;
+  width: 45px;
+  padding-left: 60px;
+  /* background-color: rgb(128, 128, 128, 0.9); */
+/*   height: 54px; */
+}
+
+.border:not(.not):hover {
+  background-color: rgba(132, 255, 15, 0.5);
+}
+.menu .dropdown:hover .dropdown-content {
+  max-height: 300px; 
+  transition: max-height 0.7s ease;
+}
+.service:hover {
+  /* background-color: rgba(132, 255, 15, 0.5); */
+  box-shadow: inset 0 0 10px #84ff0f;
+
+}
+@media (hover: hover) and (pointer: fine) {
+  .main .border {
+    margin: 5px 0 5px 0;
+  }
+  .svgText .devicon-socketio-original {
+    font-size: 28px;
+    /* padding: 7px; */
+  }
+  .project .projectTitle {
+    font-size: clamp(1rem, 4vh, 2rem);
+  }
+  .tech .border, .linkEng .border, .gitEng .border, .downloadContainer .border {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  .border .Eng {
+    width: 110px;
+  }
+  .border .Pol {
+    width: 95px;
+  }
+  .main .tables {
+    justify-content: center;
+  }
+  #homeContentPojects #textEng {
+    text-align: justify;
+    overflow-x: hidden;
+    
+  }
+  .imageDescription .description {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    font-size: clamp(1rem, 4vh, 2rem);
+  }
+  .image .projectImg {
+    width: 35vw;
+    height: auto;
+  }
+  }
+@media (pointer: coarse) {
+  .border .Eng {
+    width: 98px;
+  }
+  .border .Pol {
+    width: 85px;
+  }
+}
+  
+  .description.fade-out {
+    opacity: 0;
+  }
+.imageDescription {
+  position: relative;
+}
+.description {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+/*     font-size: clamp(1rem, 4vh, 2rem);; */
+  }
+
+/* main.css | http://localhost:3000/public/css/main.css */
+
+
+
