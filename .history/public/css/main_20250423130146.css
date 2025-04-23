@@ -38,7 +38,7 @@ body {
   padding: 0;
   overflow-x: auto;
   width: 100%;
-  color: white;
+  /* color: white; */
   font-weight: bolder;
   text-shadow: 0 0 5px #000, 0 0 10px #000;
   
@@ -832,7 +832,7 @@ hr {
   font-size: 1.2rem;
 }
 .downloadContainer {
-  color: white;
+  /* color: white; */
 }
 #textEng {
   scroll-snap-type: y mandatory;
@@ -1060,7 +1060,7 @@ hr {
 }
 @media (hover: hover) and (pointer: fine) {
   .main .border {
-    margin: 5px 0 5px
+    margin: 5px 0 5px 0;
   }
   .svgText .devicon-socketio-original {
     font-size: 28px;

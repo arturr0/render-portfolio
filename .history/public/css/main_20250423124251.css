@@ -1059,9 +1059,6 @@ hr {
 
 }
 @media (hover: hover) and (pointer: fine) {
-  .main .border {
-    margin: 5px 0 5px
-  }
   .svgText .devicon-socketio-original {
     font-size: 28px;
     /* padding: 7px; */

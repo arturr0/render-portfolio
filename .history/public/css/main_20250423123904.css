@@ -164,9 +164,9 @@ hr {
     width: 23vw;
     height: auto;
   }
-  /* .main .tables {
+  .main .tables {
     width: 60%;
-  } */
+  }
   
 }
 @media only screen and (max-width: 768px) and (orientation: portrait) {
@@ -1059,9 +1059,6 @@ hr {
 
 }
 @media (hover: hover) and (pointer: fine) {
-  .main .border {
-    margin: 5px 0 5px
-  }
   .svgText .devicon-socketio-original {
     font-size: 28px;
     /* padding: 7px; */
