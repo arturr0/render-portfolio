@@ -360,7 +360,6 @@ hr {
   }
   
 
-} 
 .hidden {
   display: none;
   user-select: text;
@@ -492,7 +491,7 @@ hr {
   background: #001d15;
 }
  
-
+}
 
 @media only screen and (min-device-width: 900px) {
   /* .menu ul li a:hover {
@@ -771,12 +770,16 @@ hr {
   box-sizing: border-box;
   padding: 0 10px 10px 10px;  
 }
-
+/* #center {
+  height: 100%; /* Take up 100% of the parent's height */
+  width: 100%;
+/*   margin: auto; */
+} */
 #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
   width: 100%;
-  /* background-color: rgba(176,196,222, 0.8); */
+  background-color: rgba(176,196,222, 0.8);
   border-radius: 10px;
   font-weight: bold;
   position: relative;

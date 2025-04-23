@@ -776,7 +776,7 @@ hr {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
   width: 100%;
-  /* background-color: rgba(176,196,222, 0.8); */
+  background-color: rgba(176,196,222, 0.8);
   border-radius: 10px;
   font-weight: bold;
   position: relative;

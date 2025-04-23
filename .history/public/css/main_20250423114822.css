@@ -359,14 +359,25 @@ hr {
     
   }
   
-
-} 
+/*   .projectTitle {
+       padding: 10px;
+       font-weight: bold;
+       font-size: 20px;
+       height: auto; /* Allow the height to adjust based on the content */
+/*        min-height: 20px; /* Ensure it has a minimum height */ 
+   } */
 .hidden {
   display: none;
   user-select: text;
 
 }
-
+/*    .projectTitle {
+       padding: 10px;
+       font-weight: bold;
+       font-size: 20px;
+       height: auto; /* Allow the height to adjust based on the content */
+/*        min-height: 20px; /* Ensure it has a minimum height */ 
+   } */
   .menu .dropdown .dropdown-content {
     max-height: 1000px;
     overflow: hidden;
@@ -491,8 +502,14 @@ hr {
   align-items: center;
   background: #001d15;
 }
- 
-
+  /* .main .tech, .linkEng, .gitEng {
+    margin-right: 5px;
+  } */
+  
+  /* .main .description {
+    width: 100%;
+  } */
+}
 
 @media only screen and (min-device-width: 900px) {
   /* .menu ul li a:hover {
@@ -582,7 +599,7 @@ hr {
 #projects:hover {
   font-size: 20px;
 }
-
+}
 #projectsEng, #projectsPol {
   /* position: absolute; */
   display: flex;
@@ -771,12 +788,16 @@ hr {
   box-sizing: border-box;
   padding: 0 10px 10px 10px;  
 }
-
+/* #center {
+  height: 100%; /* Take up 100% of the parent's height */
+  width: 100%;
+/*   margin: auto; */
+} */
 #homeContent {
   overflow: auto; /* Enable both vertical and horizontal scrolling if needed */
   height: 100%; /* Take up 100% of the parent's height */
   width: 100%;
-  /* background-color: rgba(176,196,222, 0.8); */
+  background-color: rgba(176,196,222, 0.8);
   border-radius: 10px;
   font-weight: bold;
   position: relative;
