@@ -344,7 +344,10 @@ hr {
 
 }
 }
- 
+.tables {
+  
+  gap: 10px;
+}
   
   
 @media (max-device-width: 1200px) {
