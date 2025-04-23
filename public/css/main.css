@@ -800,7 +800,7 @@ hr {
   flex-direction: row;
 /*   justify-content: flex-start; */
 /*   margin-top: 10px; */
-  max-width: 45%;
+  /* max-width: 45%; */
   /* margin-bottom: 7px; */
 }
 #Ctables {
