@@ -111,31 +111,10 @@ html(lang='en')
           #textEng(style="width: 100%;")
             div.project
               .projectTitle
-                | "DAMPED VIBRATIONS SIMULATOR"
-              .imageDescription
-                .image
-                  img(src='public/images/python.png' onclick="display()").projectImg
-                .description
-                  | Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.
-              .tables(style="width: 35%") 
-                .tech
-                  div.border.not(style="white-space: nowrap;") 
-                    i.icon-cogs
-                    p.borderContent
-                      | Python
-                a(href='https://github.com/arturr0/python-simulator' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project
-              .projectTitle
                 | "NEURAL NETWORK FOR MECHANICS"
               .imageDescription
                 .image
-                  img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/sdof2.jpg?v=1744844756294' onclick="display()").projectImg
+                  img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/sdof6.png?v=1751257764326' onclick="display()").projectImg
                 .description
                   | Neural network-based application designed to predict the behavior of damped vibrations in single degree of freedom mechanical systems. Using supervised learning, the model is trained on solutions to differential equations of motion. The app features real-time visualization of the learning process and allows users to input their own parameters to test the neural network’s predictive capabilities. This combination of AI and dynamic simulation makes app a powerful educational and research tool for understanding vibration analysis.
               .tables(style="width: 35%") 
@@ -144,7 +123,34 @@ html(lang='en')
                     i.icon-cogs
                     p.borderContent
                       | C++
-                a(href='https://github.com/arturr0/nn-mech' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                a(href='https://github.com/arturr0/vibration-ai' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
+            div.project
+              .projectTitle
+                | "KINEMATICS LAB"
+              .imageDescription
+                .image
+                  img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/m.png?v=1751414877731' onclick="display()").projectImg
+                .description
+                  | This browser-based visualization tool helps users explore fundamental mechanics through interactive function graphing. Built with p5.js, it dynamically renders position-time functions alongside their velocity and acceleration curves using real-time numerical derivatives. Ideal for introductory dynamics, the app supports polynomial motion, harmonic oscillations, and basic vibrations with adjustable parameters. Features include live tangent lines, area calculations, and intuitive graph scaling—all designed to build intuition around how derivatives represent motion.
+              .tables(style="width: 35%") 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | Math.js, p5.js
+                a(href='https://kinematics-lab.onrender.com/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
+                  .linkEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-globe
+                      p.borderContent
+                        | Link
+                a(href='https://github.com/arturr0/python-simulator' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
                     div.border(style="white-space: nowrap;") 
                       i.icon-github-circled
@@ -192,18 +198,51 @@ html(lang='en')
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
+            div.project
+              .projectTitle
+                | "DAMPED VIBRATIONS SIMULATOR"
+              .imageDescription
+                .image
+                  img(src='public/images/python.png' onclick="display()").projectImg
+                .description
+                  | Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.
+              .tables(style="width: 35%") 
+                .tech
+                  div.border.not(style="white-space: nowrap;") 
+                    i.icon-cogs
+                    p.borderContent
+                      | Python
+                a(href='https://github.com/arturr0/python-simulator' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                  .gitEng
+                    div.border(style="white-space: nowrap;") 
+                      i.icon-github-circled
+                      p.borderContent
+                        | GitHub
+              hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
     script(type='text/javascript').
       let storedViews = localStorage.getItem('views');
       document.getElementById('visitEng').textContent = "Visits: " + storedViews;
       document.getElementById('visitPol').textContent = "Wizyty: " + storedViews;
       projectTxt = [
-        ["Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.",
-        "Symulator drgań wymuszonych siłą harmoniczną układu: masa, sprężyna, tłumik w języku Python. Program rozwiązuje różniczkowe równanie ruchu danej masy metodą różniczkowania numerycznego. Częstotliwość układu obliczana jest w oparciu o bibliotekę SciPy. Obliczenia trwają relatywnie długo, dużo szybciej program działałby w języku C++, jednak duża przystępność dla programisty bibliotek Python to niewątpliwa zaleta tego narzędzia."],
-        ["Neural network-based application designed to predict the behavior of damped vibrations in single degree of freedom mechanical systems. Using supervised learning, the model is trained on solutions to differential equations of motion. The app features real-time visualization of the learning process and allows users to input their own parameters to test the neural network’s predictive capabilities. This combination of AI and dynamic simulation makes app a powerful educational and research tool for understanding vibration analysis.", 
-        "Aplikacja oparta na sieci neuronowej, służąca do przewidywania zachowania drgań tłumionych w układach mechanicznych o jednym stopniu swobody. Model uczy się na podstawie rozwiązań równań różniczkowych ruchu, korzystając z algorytmu uczenia nadzorowanego. Aplikacja oferuje wizualizację procesu uczenia w czasie rzeczywistym oraz możliwość wprowadzenia własnych parametrów przez użytkownika w celu przetestowania dokładności predykcji. Program łączy sztuczną inteligencję z dynamiczną symulacją, stanowiąc cenne narzędzie edukacyjne i badawcze do analizy drgań."],
-        ["The program's task is to solve a differential equation of motion with a third derivative. The equation is implemented in the Simulink environment as a block diagram. The MATLAB program displays the solution of the equation in the form of plots of frequency, jerk (third derivative), acceleration (second derivative), velocity (first derivative), and displacement as functions of time.", 
-        "Zadaniem programu jest rozwiązanie różniczkowego równania ruchu z trzecią pochodną. Równanie zaimplementowane jest w środowisku Simulink w postaci schematu blokowego. Rozwiązanie równania program MATLAB wyświetla w postaci wykresów częstotliwości, zrywności (trzecia pochodna), przyspieszenia (druga pochodna), prędkości (pierwsza pochodna) i drogi w funkcji czasu."],
-        ["The program simulates the operation of a vehicle suspension system after driving over a curb with the front and rear wheels. The system of springs, shock absorbers, and masses is configured in the graphical Amesim environment. Program displays acceleration and vibrations acting on the passenger on a graph, enabling the analysis of the phenomenon. Application allows for the adjustment of suspension element parameters to minimize the discomfort for the passenger when driving over a curb.",
-        "Program symuluje działanie układu zawieszenia pojazdu po najeździe na krawężnik przednim i tylnym kołem. Układ sprężyn, amortyzatorów i mas ustawia się w graficznym środowisku Amesim. Wykres przyspieszeń i drgań działających na pasażera pozwala na analize zjawiska, a aplikacja umożliwia dobór parametrów elementów zawieszenia tak, aby najazd na krawężnik był jak najmniej uciążliwy dla pasażera."]
+        [
+          "Neural network-based application designed to predict the behavior of damped vibrations in single degree of freedom mechanical systems. Using supervised learning, the model is trained on solutions to differential equations of motion. The app features real-time visualization of the learning process and allows users to input their own parameters to test the neural network's predictive capabilities. This combination of AI and dynamic simulation makes app a powerful educational and research tool for understanding vibration analysis.",
+          "Aplikacja oparta na sieci neuronowej, służąca do przewidywania zachowania drgań tłumionych w układach mechanicznych o jednym stopniu swobody. Model uczy się na podstawie rozwiązań równań różniczkowych ruchu, korzystając z algorytmu uczenia nadzorowanego. Aplikacja oferuje wizualizację procesu uczenia w czasie rzeczywistym oraz możliwość wprowadzenia własnych parametrów przez użytkownika w celu przetestowania dokładności predykcji. Program łączy sztuczną inteligencję z dynamiczną symulacją, stanowiąc cenne narzędzie edukacyjne i badawcze do analizy drgań."
+        ],
+        [
+          "This browser-based visualization tool helps users explore fundamental mechanics through interactive function graphing. Built with p5.js, it dynamically renders position-time functions alongside their velocity and acceleration curves using real-time numerical derivatives. Ideal for introductory dynamics, the app supports polynomial motion, harmonic oscillations, and basic vibrations with adjustable parameters. Features include live tangent lines, area calculations, and intuitive graph scaling—all designed to build intuition around how derivatives represent motion.",
+          "Narzędzie wizualizacyjne uruchamiane pomaga użytkownikom poznać podstawy mechaniki poprzez interaktywne wykresy funkcji. Zbudowane w oparciu o p5.js, dynamicznie rysuje funkcje położenia w czasie oraz odpowiadające im wykresy prędkości i przyspieszenia, wykorzystując numeryczne pochodne w czasie rzeczywistym. Aplikacja idealnie nadaje się do nauki podstaw dynamiki — obsługuje ruchy wielomianowe, drgania harmoniczne i proste wibracje z możliwością regulacji parametrów. Wśród funkcji znajdują się m.in. dynamiczne styczne, obliczenia pól pod wykresami oraz intuicyjne skalowanie — wszystko zaprojektowane tak, by budować intuicję dotyczącą fizycznego znaczenia pochodnych w opisie ruchu."
+        ],
+        [
+          "The program's task is to solve a differential equation of motion with a third derivative. The equation is implemented in the Simulink environment as a block diagram. The MATLAB program displays the solution of the equation in the form of plots of frequency, jerk (third derivative), acceleration (second derivative), velocity (first derivative), and displacement as functions of time.", 
+          "Zadaniem programu jest rozwiązanie różniczkowego równania ruchu z trzecią pochodną. Równanie zaimplementowane jest w środowisku Simulink w postaci schematu blokowego. Rozwiązanie równania program MATLAB wyświetla w postaci wykresów częstotliwości, zrywności (trzecia pochodna), przyspieszenia (druga pochodna), prędkości (pierwsza pochodna) i drogi w funkcji czasu."
+        ],
+        [
+          "The program simulates the operation of a vehicle suspension system after driving over a curb with the front and rear wheels. The system of springs, shock absorbers, and masses is configured in the graphical Amesim environment. Program displays acceleration and vibrations acting on the passenger on a graph, enabling the analysis of the phenomenon. Application allows for the adjustment of suspension element parameters to minimize the discomfort for the passenger when driving over a curb.",
+          "Program symuluje działanie układu zawieszenia pojazdu po najeździe na krawężnik przednim i tylnym kołem. Układ sprężyn, amortyzatorów i mas ustawia się w graficznym środowisku Amesim. Wykres przyspieszeń i drgań działających na pasażera pozwala na analize zjawiska, a aplikacja umożliwia dobór parametrów elementów zawieszenia tak, aby najazd na krawężnik był jak najmniej uciążliwy dla pasażera."
+        ],
+        [
+          "Simulator of forced vibrations with a harmonic force for a system: mass, spring, damper in Python. The program solves the differential equation of motion for a given mass using numerical differentiation. The system's frequency is calculated based on the SciPy library. The computations take a relatively long time, the program would run much faster in C++. However, the significant accessibility Python libraries for developers is an undeniable advantage of this programming language.",
+          "Symulator drgań wymuszonych siłą harmoniczną układu: masa, sprężyna, tłumik w języku Python. Program rozwiązuje różniczkowe równanie ruchu danej masy metodą różniczkowania numerycznego. Częstotliwość układu obliczana jest w oparciu o bibliotekę SciPy. Obliczenia trwają relatywnie długo, dużo szybciej program działałby w języku C++, jednak duża przystępność dla programisty bibliotek Python to niewątpliwa zaleta tego narzędzia."
+        ]
       ];
     script(src='public/dropdown.js')
